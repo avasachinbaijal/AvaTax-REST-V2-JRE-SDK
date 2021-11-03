@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ExportDocumentLineModel {
      * Getter for format
      *
      * The file format.
+	 * 
      */
     public ReportFormat getFormat() {
         return this.format;
@@ -56,6 +58,7 @@ public class ExportDocumentLineModel {
      *
      * The start date filter for report execution. If no date provided, same date of last month will be used as the startDate.
     * Accepts date in short format yyyy-mm-dd as well as date time stamp
+	 * 
      */
     public Date getStartDate() {
         return this.startDate;
@@ -78,6 +81,7 @@ public class ExportDocumentLineModel {
      *
      * The end date filter for report execution. If no date provided, today's date will be used as the endDate.
     * Accepts date in short format yyyy-mm-dd as well as date time stamp
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -102,6 +106,7 @@ public class ExportDocumentLineModel {
     * Use "ALL" for all countries
     * Use "ALL Non-US" for all international countries
     * Or use a single 2-char ISO country code
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -126,6 +131,7 @@ public class ExportDocumentLineModel {
      *
      * The state associated with the transactions you wish to run a report.
     * Use "ALL" for all states or 2-char state code.
+	 * 
      */
     public String getState() {
         return this.state;
@@ -147,6 +153,7 @@ public class ExportDocumentLineModel {
      * Getter for dateFilter
      *
      * The type of date to filter your transactions
+	 * 
      */
     public ReportDateFilter getDateFilter() {
         return this.dateFilter;
@@ -167,6 +174,7 @@ public class ExportDocumentLineModel {
      * Getter for docType
      *
      * The transaction type you want to run a report on
+	 * 
      */
     public ReportDocType getDocType() {
         return this.docType;
@@ -188,6 +196,7 @@ public class ExportDocumentLineModel {
      *
      * The currency your report is displayed in.
     * Accepts "USD" or leave this blank to get all the documents with all the currencies
+	 * 
      */
     public String getCurrencyCode() {
         return this.currencyCode;
@@ -210,6 +219,7 @@ public class ExportDocumentLineModel {
      *
      * Number of partitions (2 - 250) to split the report into.
     * If a value is provided for this property, a value must also be provided for the partition property.
+	 * 
      */
     public Integer getNumberOfPartitions() {
         return this.numberOfPartitions;
@@ -232,6 +242,7 @@ public class ExportDocumentLineModel {
      *
      * The zero-based partition number to retrieve in this export request.
     * If a value is provided for this property, a value must also be provided for the numberOfPartitions property.
+	 * 
      */
     public Integer getPartition() {
         return this.partition;
@@ -255,6 +266,7 @@ public class ExportDocumentLineModel {
      * If true, include only documents that are locked.
     * If false, include only documents that are not locked.
     * Defaults to false if not specified.
+	 * 
      */
     public Boolean getIsLocked() {
         return this.isLocked;
@@ -277,6 +289,7 @@ public class ExportDocumentLineModel {
      * Getter for merchantSellerIdentifier
      *
      * If set, include only documents associated with this merchantSellerId.
+	 * 
      */
     public String getMerchantSellerIdentifier() {
         return this.merchantSellerIdentifier;
@@ -298,6 +311,7 @@ public class ExportDocumentLineModel {
      *
      * DocumentStatus
     * For documentStatus, accepted values are: Saved, Posted, Committed, Cancelled
+	 * 
      */
     public DocumentStatus getDocumentStatus() {
         return this.documentStatus;
@@ -322,6 +336,7 @@ public class ExportDocumentLineModel {
     * For dateFilter = DocumentDate, PaymentDate, TaxDate or ReportingDate, the isModifiedDateSameAsDocumentDate parameter is ignored.
     * Set this parameter to true when you would like to get Documents which have the Document Date same as Modified Date.
     * Defaults to false if not specified.
+	 * 
      */
     public Boolean getIsModifiedDateSameAsDocumentDate() {
         return this.isModifiedDateSameAsDocumentDate;

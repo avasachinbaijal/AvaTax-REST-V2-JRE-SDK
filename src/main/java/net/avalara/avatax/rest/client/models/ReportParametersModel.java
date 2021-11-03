@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ReportParametersModel {
      * Getter for startDate
      *
      * The start date filter used for your report
+	 * 
      */
     public Date getStartDate() {
         return this.startDate;
@@ -55,6 +57,7 @@ public class ReportParametersModel {
      * Getter for endDate
      *
      * The end date filter used for your report
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -75,6 +78,7 @@ public class ReportParametersModel {
      * Getter for country
      *
      * The country filter used for your report
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -95,6 +99,7 @@ public class ReportParametersModel {
      * Getter for state
      *
      * The state filter used for your report
+	 * 
      */
     public String getState() {
         return this.state;
@@ -115,6 +120,7 @@ public class ReportParametersModel {
      * Getter for dateFilter
      *
      * The date type filter used for your report
+	 * 
      */
     public String getDateFilter() {
         return this.dateFilter;
@@ -135,6 +141,7 @@ public class ReportParametersModel {
      * Getter for docType
      *
      * The doc type filter used for your report
+	 * 
      */
     public String getDocType() {
         return this.docType;
@@ -155,6 +162,7 @@ public class ReportParametersModel {
      * Getter for dateFormat
      *
      * The date format used for your report
+	 * 
      */
     public String getDateFormat() {
         return this.dateFormat;
@@ -175,6 +183,7 @@ public class ReportParametersModel {
      * Getter for currencyCode
      *
      * The currency code used for your report
+	 * 
      */
     public String getCurrencyCode() {
         return this.currencyCode;
@@ -195,6 +204,7 @@ public class ReportParametersModel {
      * Getter for numberOfPartitions
      *
      * Number of partitions to split the report into.
+	 * 
      */
     public Integer getNumberOfPartitions() {
         return this.numberOfPartitions;
@@ -215,6 +225,7 @@ public class ReportParametersModel {
      * Getter for partition
      *
      * The zero-based partition number to retrieve in this export request.
+	 * 
      */
     public Integer getPartition() {
         return this.partition;
@@ -237,6 +248,7 @@ public class ReportParametersModel {
      * If true, include only documents that are locked.
     * If false, include only documents that are not locked.
     * Defaults to false if not specified.
+	 * 
      */
     public Boolean getIsLocked() {
         return this.isLocked;
@@ -259,6 +271,7 @@ public class ReportParametersModel {
      * Getter for merchantSellerId
      *
      * If set, include only documents associated with this merchantSellerId.
+	 * 
      */
     public String getMerchantSellerId() {
         return this.merchantSellerId;
@@ -280,6 +293,7 @@ public class ReportParametersModel {
      *
      * The Document status filter used for report
     * For documentStatus, accepted values are: Temporary, Saved, Posted, Committed, Cancelled, Adjusted, Queued, PendingApproval
+	 * 
      */
     public String getDocumentStatus() {
         return this.documentStatus;
@@ -303,6 +317,7 @@ public class ReportParametersModel {
      * If true, modified date will be same as document date
     * If false, modified date will not be same as document date
     * Defaults to false if not specified.
+	 * 
      */
     public Boolean getIsModifiedDateSameAsDocumentDate() {
         return this.isModifiedDateSameAsDocumentDate;

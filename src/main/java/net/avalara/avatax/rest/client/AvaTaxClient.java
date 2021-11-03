@@ -134,6 +134,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to update.
      * @param model A request confirming that you wish to reset the license key of this account.
      * @return LicenseKeyModel
@@ -141,7 +142,7 @@ public class AvaTaxClient {
     public LicenseKeyModel accountResetLicenseKey(Integer id, ResetLicenseKeyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
         path.applyField("id", id);
-        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){})).call();
+        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -166,6 +167,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to update.
      * @param model A request confirming that you wish to reset the license key of this account.
      * @return LicenseKeyModel
@@ -173,7 +175,7 @@ public class AvaTaxClient {
     public Future<LicenseKeyModel> accountResetLicenseKeyAsync(Integer id, ResetLicenseKeyModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){}));
+        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"21.10.0"));
     }
 
     /**
@@ -194,6 +196,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account to activate
      * @param model The activation request
      * @return AccountModel
@@ -201,7 +204,7 @@ public class AvaTaxClient {
     public AccountModel activateAccount(Integer id, ActivateAccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
-        return ((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){})).call();
+        return ((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -222,6 +225,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account to activate
      * @param model The activation request
      * @return AccountModel
@@ -229,7 +233,7 @@ public class AvaTaxClient {
     public Future<AccountModel> activateAccountAsync(Integer id, ActivateAccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){}));
+        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){},"21.10.0"));
     }
 
     /**
@@ -254,6 +258,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to audit.
      * @param start The start datetime of audit history you with to retrieve, e.g. "2018-06-08T17:00:00Z". Defaults to the past 15 minutes.
      * @param end The end datetime of audit history you with to retrieve, e.g. "2018-06-08T17:15:00Z. Defaults to the current time. Maximum of an hour after the start time.
@@ -268,7 +273,7 @@ public class AvaTaxClient {
         path.addQuery("end", end);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){})).call();
+        return ((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -293,6 +298,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to audit.
      * @param start The start datetime of audit history you with to retrieve, e.g. "2018-06-08T17:00:00Z". Defaults to the past 15 minutes.
      * @param end The end datetime of audit history you with to retrieve, e.g. "2018-06-08T17:15:00Z. Defaults to the current time. Maximum of an hour after the start time.
@@ -307,7 +313,7 @@ public class AvaTaxClient {
         path.addQuery("end", end);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){},"21.10.0"));
     }
 
     /**
@@ -328,6 +334,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to update.
      * @param model 
      * @return LicenseKeyModel
@@ -335,7 +342,7 @@ public class AvaTaxClient {
     public LicenseKeyModel createLicenseKey(Integer id, AccountLicenseKeyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey");
         path.applyField("id", id);
-        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){})).call();
+        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -356,6 +363,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to update.
      * @param model 
      * @return LicenseKeyModel
@@ -363,7 +371,7 @@ public class AvaTaxClient {
     public Future<LicenseKeyModel> createLicenseKeyAsync(Integer id, AccountLicenseKeyModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){}));
+        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"21.10.0"));
     }
 
     /**
@@ -379,6 +387,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to update.
      * @param licensekeyname The license key name you wish to update.
      * @return ArrayList<ErrorDetail>
@@ -387,7 +396,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -403,6 +412,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to update.
      * @param licensekeyname The license key name you wish to update.
      * @return ArrayList<ErrorDetail>
@@ -411,7 +421,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -427,6 +437,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
      * @param include A comma separated list of special fetch options
      * @return AccountModel
@@ -435,7 +446,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){})).call();
+        return ((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -451,6 +462,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
      * @param include A comma separated list of special fetch options
      * @return AccountModel
@@ -459,7 +471,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){}));
+        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){},"21.10.0"));
     }
 
     /**
@@ -482,13 +494,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return ArrayList<AccountConfigurationModel>
      */
     public ArrayList<AccountConfigurationModel> getAccountConfiguration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){})).call();
+        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -511,13 +524,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return ArrayList<AccountConfigurationModel>
      */
     public Future<ArrayList<AccountConfigurationModel>> getAccountConfigurationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -529,6 +543,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
      * @param licensekeyname The ID of the account to retrieve
      * @return AccountLicenseKeyModel
@@ -537,7 +552,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return ((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){})).call();
+        return ((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -549,6 +564,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
      * @param licensekeyname The ID of the account to retrieve
      * @return AccountLicenseKeyModel
@@ -557,7 +573,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return this.threadPool.submit((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){}));
+        return this.threadPool.submit((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){},"21.10.0"));
     }
 
     /**
@@ -569,13 +585,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
      * @return ArrayList<AccountLicenseKeyModel>
      */
     public ArrayList<AccountLicenseKeyModel> getLicenseKeys(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekeys");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){})).call();
+        return ((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -587,13 +604,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
      * @return ArrayList<AccountLicenseKeyModel>
      */
     public Future<ArrayList<AccountLicenseKeyModel>> getLicenseKeysAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekeys");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){},"21.10.0"));
     }
 
     /**
@@ -616,6 +634,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptions, users
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -630,7 +649,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){})).call();
+        return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -653,6 +672,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptions, users
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -667,7 +687,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){},"21.10.0"));
     }
 
     /**
@@ -690,6 +710,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @param model 
      * @return ArrayList<AccountConfigurationModel>
@@ -697,7 +718,7 @@ public class AvaTaxClient {
     public ArrayList<AccountConfigurationModel> setAccountConfiguration(Integer id, ArrayList<AccountConfigurationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){})).call();
+        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -720,6 +741,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @param model 
      * @return ArrayList<AccountConfigurationModel>
@@ -727,7 +749,7 @@ public class AvaTaxClient {
     public Future<ArrayList<AccountConfigurationModel>> setAccountConfigurationAsync(Integer id, ArrayList<AccountConfigurationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -750,6 +772,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AutoAddress.
      * 
+     * Swagger Name: AvaTaxClient
      * @param line1 Line 1
      * @param line2 Line 2
      * @param line3 Line 3
@@ -770,7 +793,7 @@ public class AvaTaxClient {
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
         path.addQuery("textCase", textCase);
-        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){})).call();
+        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -793,6 +816,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AutoAddress.
      * 
+     * Swagger Name: AvaTaxClient
      * @param line1 Line 1
      * @param line2 Line 2
      * @param line3 Line 3
@@ -813,7 +837,7 @@ public class AvaTaxClient {
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
         path.addQuery("textCase", textCase);
-        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){}));
+        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){},"21.10.0"));
     }
 
     /**
@@ -831,12 +855,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AutoAddress.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The address to resolve
      * @return AddressResolutionModel
      */
     public AddressResolutionModel resolveAddressPost(AddressValidationInfo model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
-        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){})).call();
+        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -854,17 +879,19 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AutoAddress.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The address to resolve
      * @return AddressResolutionModel
      */
     public Future<AddressResolutionModel> resolveAddressPostAsync(AddressValidationInfo model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
-        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){}));
+        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){},"21.10.0"));
     }
 
     /**
      * Create a lookup file for a company
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account for the company
      * @param companyId The ID of the company for which the lookup file is to be created
      * @param model The lookup file you wish to create
@@ -874,12 +901,13 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
         path.applyField("accountId", accountId);
         path.applyField("companyId", companyId);
-        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){})).call();
+        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"21.10.0")).call();
     }
 
     /**
      * Create a lookup file for a company
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account for the company
      * @param companyId The ID of the company for which the lookup file is to be created
      * @param model The lookup file you wish to create
@@ -889,12 +917,13 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
         path.applyField("accountId", accountId);
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){}));
+        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"21.10.0"));
     }
 
     /**
      * Delete a lookup file
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account for the company the lookup file is for
      * @param id The unique ID/GUID for the company lookup file to be deleted
      * @return ArrayList<ErrorDetail>
@@ -903,12 +932,13 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
      * Delete a lookup file
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account for the company the lookup file is for
      * @param id The unique ID/GUID for the company lookup file to be deleted
      * @return ArrayList<ErrorDetail>
@@ -917,12 +947,13 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
      * Get the lookup files for a company
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The account ID for the company
      * @param companyId The ID of the company for which to retrieve lookup files
      * @return FetchResult<AdvancedRuleLookupFileModel>
@@ -931,12 +962,13 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
         path.applyField("accountId", accountId);
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){})).call();
+        return ((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){},"21.10.0")).call();
     }
 
     /**
      * Get the lookup files for a company
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The account ID for the company
      * @param companyId The ID of the company for which to retrieve lookup files
      * @return FetchResult<AdvancedRuleLookupFileModel>
@@ -945,12 +977,13 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
         path.applyField("accountId", accountId);
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){},"21.10.0"));
     }
 
     /**
      * Get a lookup file for an accountId and companyLookupFileId
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account for the lookup file
      * @param id The unique ID/GUID of the company lookup file to return
      * @return AdvancedRuleLookupFileModel
@@ -959,12 +992,13 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){})).call();
+        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){},"21.10.0")).call();
     }
 
     /**
      * Get a lookup file for an accountId and companyLookupFileId
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account for the lookup file
      * @param id The unique ID/GUID of the company lookup file to return
      * @return AdvancedRuleLookupFileModel
@@ -973,12 +1007,13 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){}));
+        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){},"21.10.0"));
     }
 
     /**
      * Update a lookup file
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account for the company the lookup file is for
      * @param id The unique ID/GUID of the company lookup file to be updated
      * @param model The new values to update the lookup file
@@ -988,12 +1023,13 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){})).call();
+        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"21.10.0")).call();
     }
 
     /**
      * Update a lookup file
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account for the company the lookup file is for
      * @param id The unique ID/GUID of the company lookup file to be updated
      * @param model The new values to update the lookup file
@@ -1003,7 +1039,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){}));
+        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"21.10.0"));
     }
 
     /**
@@ -1017,12 +1053,13 @@ public class AvaTaxClient {
      * * This API requires the user role Compliance Root User.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The AvaFileForm you wish to create.
      * @return ArrayList<AvaFileFormModel>
      */
     public ArrayList<AvaFileFormModel> createAvaFileForms(ArrayList<AvaFileFormModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
-        return ((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){})).call();
+        return ((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -1036,12 +1073,13 @@ public class AvaTaxClient {
      * * This API requires the user role Compliance Root User.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The AvaFileForm you wish to create.
      * @return ArrayList<AvaFileFormModel>
      */
     public Future<ArrayList<AvaFileFormModel>> createAvaFileFormsAsync(ArrayList<AvaFileFormModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
-        return this.threadPool.submit((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){},"21.10.0"));
     }
 
     /**
@@ -1054,13 +1092,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: Compliance Root User, ComplianceUser, FirmAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the AvaFileForm you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteAvaFileForm(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -1073,13 +1112,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: Compliance Root User, ComplianceUser, FirmAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the AvaFileForm you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteAvaFileFormAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -1092,13 +1132,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The primary key of this AvaFileForm
      * @return AvaFileFormModel
      */
     public AvaFileFormModel getAvaFileForm(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){})).call();
+        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -1111,13 +1152,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The primary key of this AvaFileForm
      * @return AvaFileFormModel
      */
     public Future<AvaFileFormModel> getAvaFileFormAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){}));
+        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){},"21.10.0"));
     }
 
     /**
@@ -1131,6 +1173,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* outletTypeId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -1143,7 +1186,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){})).call();
+        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -1157,6 +1200,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* outletTypeId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -1169,7 +1213,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"21.10.0"));
     }
 
     /**
@@ -1183,6 +1227,7 @@ public class AvaTaxClient {
      * * This API requires the user role Compliance Root User.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the AvaFileForm you wish to update
      * @param model The AvaFileForm model you wish to update.
      * @return AvaFileFormModel
@@ -1190,7 +1235,7 @@ public class AvaTaxClient {
     public AvaFileFormModel updateAvaFileForm(Integer id, AvaFileFormModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){})).call();
+        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -1204,6 +1249,7 @@ public class AvaTaxClient {
      * * This API requires the user role Compliance Root User.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the AvaFileForm you wish to update
      * @param model The AvaFileForm model you wish to update.
      * @return AvaFileFormModel
@@ -1211,7 +1257,7 @@ public class AvaTaxClient {
     public Future<AvaFileFormModel> updateAvaFileFormAsync(Integer id, AvaFileFormModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){}));
+        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){},"21.10.0"));
     }
 
     /**
@@ -1234,6 +1280,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch.
      * @param id The ID of the batch to cancel.
      * @return BatchModel
@@ -1242,7 +1289,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}/cancel");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){})).call();
+        return ((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -1265,6 +1312,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch.
      * @param id The ID of the batch to cancel.
      * @return BatchModel
@@ -1273,7 +1321,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}/cancel");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){}));
+        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){},"21.10.0"));
     }
 
     /**
@@ -1303,6 +1351,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch.
      * @param model The batch you wish to create.
      * @return ArrayList<BatchModel>
@@ -1310,7 +1359,7 @@ public class AvaTaxClient {
     public ArrayList<BatchModel> createBatches(Integer companyId, ArrayList<BatchModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){})).call();
+        return ((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -1340,6 +1389,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch.
      * @param model The batch you wish to create.
      * @return ArrayList<BatchModel>
@@ -1347,7 +1397,7 @@ public class AvaTaxClient {
     public Future<ArrayList<BatchModel>> createBatchesAsync(Integer companyId, ArrayList<BatchModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){},"21.10.0"));
     }
 
     /**
@@ -1375,6 +1425,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch.
      * @param model The transaction batch you wish to create.
      * @return CreateTransactionBatchResponseModel
@@ -1382,7 +1433,7 @@ public class AvaTaxClient {
     public CreateTransactionBatchResponseModel createTransactionBatch(Integer companyId, CreateTransactionBatchRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/transactions");
         path.applyField("companyId", companyId);
-        return ((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){})).call();
+        return ((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -1410,6 +1461,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch.
      * @param model The transaction batch you wish to create.
      * @return CreateTransactionBatchResponseModel
@@ -1417,7 +1469,7 @@ public class AvaTaxClient {
     public Future<CreateTransactionBatchResponseModel> createTransactionBatchAsync(Integer companyId, CreateTransactionBatchRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/transactions");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){}));
+        return this.threadPool.submit((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){},"21.10.0"));
     }
 
     /**
@@ -1438,6 +1490,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: CSPAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch.
      * @param id The ID of the batch to delete.
      * @return ArrayList<ErrorDetail>
@@ -1446,7 +1499,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -1467,6 +1520,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: CSPAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch.
      * @param id The ID of the batch to delete.
      * @return ArrayList<ErrorDetail>
@@ -1475,7 +1529,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -1487,6 +1541,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch
      * @param batchId The ID of the batch object
      * @param id The primary key of this batch file object
@@ -1497,7 +1552,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -1509,6 +1564,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch
      * @param batchId The ID of the batch object
      * @param id The primary key of this batch file object
@@ -1519,7 +1575,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -1545,6 +1601,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch
      * @param id The primary key of this batch
      * @return BatchModel
@@ -1553,7 +1610,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){})).call();
+        return ((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -1579,6 +1636,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this batch
      * @param id The primary key of this batch
      * @return BatchModel
@@ -1587,7 +1645,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){}));
+        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){},"21.10.0"));
     }
 
     /**
@@ -1619,6 +1677,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* files
      * @param include A comma separated list of additional data to retrieve.
@@ -1635,7 +1694,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){})).call();
+        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -1667,6 +1726,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* files
      * @param include A comma separated list of additional data to retrieve.
@@ -1683,7 +1743,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"21.10.0"));
     }
 
     /**
@@ -1712,6 +1772,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* files
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -1726,7 +1787,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){})).call();
+        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -1755,6 +1816,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* files
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -1769,7 +1831,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"21.10.0"));
     }
 
     /**
@@ -1796,6 +1858,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
      * @param model the requests to send out to customers
@@ -1805,7 +1868,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certexpressinvites");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){})).call();
+        return ((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -1832,6 +1895,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
      * @param model the requests to send out to customers
@@ -1841,7 +1905,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certexpressinvites");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -1868,6 +1932,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
      * @param id The unique ID number of this CertExpress invitation
@@ -1880,7 +1945,7 @@ public class AvaTaxClient {
         path.applyField("customerCode", customerCode);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){})).call();
+        return ((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -1907,6 +1972,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
      * @param id The unique ID number of this CertExpress invitation
@@ -1919,7 +1985,7 @@ public class AvaTaxClient {
         path.applyField("customerCode", customerCode);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){}));
+        return this.threadPool.submit((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){},"21.10.0"));
     }
 
     /**
@@ -1946,6 +2012,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.      No options are defined at this time.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* companyId, customer, coverLetter, exposureZones, exemptReasons, requestLink
@@ -1962,7 +2029,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){})).call();
+        return ((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -1989,6 +2056,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.      No options are defined at this time.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* companyId, customer, coverLetter, exposureZones, exemptReasons, requestLink
@@ -2005,7 +2073,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -2038,6 +2106,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID number of the company recording this certificate
      * @param preValidatedExemptionReason If set to true, the certificate will bypass the human verification process.
      * @param model Certificates to be created
@@ -2047,7 +2116,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates");
         path.applyField("companyId", companyId);
         path.addQuery("$preValidatedExemptionReason", preValidatedExemptionReason);
-        return ((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){})).call();
+        return ((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -2080,6 +2149,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID number of the company recording this certificate
      * @param preValidatedExemptionReason If set to true, the certificate will bypass the human verification process.
      * @param model Certificates to be created
@@ -2089,7 +2159,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates");
         path.applyField("companyId", companyId);
         path.addQuery("$preValidatedExemptionReason", preValidatedExemptionReason);
-        return this.threadPool.submit((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){},"21.10.0"));
     }
 
     /**
@@ -2114,6 +2184,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @return ArrayList<ErrorDetail>
@@ -2122,7 +2193,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -2147,6 +2218,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @return ArrayList<ErrorDetail>
@@ -2155,7 +2227,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -2181,6 +2253,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param page If you choose `$type`=`Jpeg`, you must specify which page number to retrieve.
@@ -2193,7 +2266,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("$page", page);
         path.addQuery("$type", type);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -2219,6 +2292,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param page If you choose `$type`=`Jpeg`, you must specify which page number to retrieve.
@@ -2231,7 +2305,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("$page", page);
         path.addQuery("$type", type);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -2260,6 +2334,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * customers - Retrieves the list of customers linked to the certificate.   * po_numbers - Retrieves all PO numbers tied to the certificate.   * attributes - Retrieves all attributes applied to the certificate.
@@ -2270,7 +2345,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){})).call();
+        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -2299,6 +2374,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * customers - Retrieves the list of customers linked to the certificate.   * po_numbers - Retrieves all PO numbers tied to the certificate.   * attributes - Retrieves all attributes applied to the certificate.
@@ -2309,7 +2385,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){}));
+        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){},"21.10.0"));
     }
 
     /**
@@ -2328,13 +2404,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company ID to check
      * @return ProvisionStatusModel
      */
     public ProvisionStatusModel getCertificateSetup(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){})).call();
+        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -2353,13 +2430,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company ID to check
      * @return ProvisionStatusModel
      */
     public Future<ProvisionStatusModel> getCertificateSetupAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){}));
+        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){},"21.10.0"));
     }
 
     /**
@@ -2385,6 +2463,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of attributes to link to this certificate.
@@ -2394,7 +2473,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){})).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -2420,6 +2499,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of attributes to link to this certificate.
@@ -2429,7 +2509,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -2456,6 +2536,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of customers needed be added to the Certificate for exemption
@@ -2465,7 +2546,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){})).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -2492,6 +2573,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of customers needed be added to the Certificate for exemption
@@ -2501,7 +2583,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"21.10.0"));
     }
 
     /**
@@ -2527,6 +2609,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @return FetchResult<CertificateAttributeModel>
@@ -2535,7 +2618,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){})).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -2561,6 +2644,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @return FetchResult<CertificateAttributeModel>
@@ -2569,7 +2653,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -2595,6 +2679,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param include OPTIONAL: A comma separated list of special fetch options.   No options are currently available when fetching customers.
@@ -2605,7 +2690,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){})).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -2631,6 +2716,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param include OPTIONAL: A comma separated list of special fetch options.   No options are currently available when fetching customers.
@@ -2641,7 +2727,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"21.10.0"));
     }
 
     /**
@@ -2670,6 +2756,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * customers - Retrieves the list of customers linked to the certificate.   * po_numbers - Retrieves all PO numbers tied to the certificate.   * attributes - Retrieves all attributes applied to the certificate.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* exemptionNumber, status, ecmsId, ecmsStatus, pdf, pages
@@ -2686,7 +2773,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){})).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -2715,6 +2802,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * customers - Retrieves the list of customers linked to the certificate.   * po_numbers - Retrieves all PO numbers tied to the certificate.   * attributes - Retrieves all attributes applied to the certificate.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* exemptionNumber, status, ecmsId, ecmsStatus, pdf, pages
@@ -2731,7 +2819,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"21.10.0"));
     }
 
     /**
@@ -2752,13 +2840,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId 
      * @return ProvisionStatusModel
      */
     public ProvisionStatusModel requestCertificateSetup(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){})).call();
+        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -2779,13 +2868,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId 
      * @return ProvisionStatusModel
      */
     public Future<ProvisionStatusModel> requestCertificateSetupAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){}));
+        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){},"21.10.0"));
     }
 
     /**
@@ -2811,6 +2901,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of attributes to unlink from this certificate.
@@ -2820,7 +2911,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){})).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -2846,6 +2937,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of attributes to unlink from this certificate.
@@ -2855,7 +2947,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -2883,6 +2975,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of customers to unlink from this certificate
@@ -2892,7 +2985,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){})).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -2920,6 +3013,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of customers to unlink from this certificate
@@ -2929,7 +3023,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"21.10.0"));
     }
 
     /**
@@ -2952,6 +3046,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The new certificate object that will replace the existing one
@@ -2961,7 +3056,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){})).call();
+        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -2984,6 +3079,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The new certificate object that will replace the existing one
@@ -2993,7 +3089,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){}));
+        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){},"21.10.0"));
     }
 
     /**
@@ -3019,6 +3115,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param file The exemption certificate file you wanted to upload. Accepted formats are: PDF, JPEG, TIFF, PNG.
@@ -3028,7 +3125,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -3054,6 +3151,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param file The exemption certificate file you wanted to upload. Accepted formats are: PDF, JPEG, TIFF, PNG.
@@ -3063,7 +3161,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -3097,13 +3195,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the company to check if its integration is certified.
      * @return String
      */
     public String certifyIntegration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/certify");
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -3137,13 +3236,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the company to check if its integration is certified.
      * @return String
      */
     public Future<String> certifyIntegrationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/certify");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -3167,6 +3267,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @param model 
      * @return String
@@ -3174,7 +3275,7 @@ public class AvaTaxClient {
     public String changeFilingStatus(Integer id, FilingStatusChangeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -3198,6 +3299,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @param model 
      * @return String
@@ -3205,7 +3307,7 @@ public class AvaTaxClient {
     public Future<String> changeFilingStatusAsync(Integer id, FilingStatusChangeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -3228,12 +3330,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Information about the company you wish to create.
      * @return CompanyModel
      */
     public CompanyModel companyInitialize(CompanyInitializationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/initialize");
-        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){})).call();
+        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -3256,12 +3359,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Information about the company you wish to create.
      * @return CompanyModel
      */
     public Future<CompanyModel> companyInitializeAsync(CompanyInitializationModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/initialize");
-        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){}));
+        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){},"21.10.0"));
     }
 
     /**
@@ -3277,12 +3381,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Either a single company object or an array of companies to create
      * @return ArrayList<CompanyModel>
      */
     public ArrayList<CompanyModel> createCompanies(ArrayList<CompanyModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
-        return ((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){})).call();
+        return ((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -3298,12 +3403,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Either a single company object or an array of companies to create
      * @return ArrayList<CompanyModel>
      */
     public Future<ArrayList<CompanyModel>> createCompaniesAsync(ArrayList<CompanyModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
-        return this.threadPool.submit((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){},"21.10.0"));
     }
 
     /**
@@ -3325,6 +3431,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this company parameter.
      * @param model The company parameters you wish to create.
      * @return ArrayList<CompanyParameterDetailModel>
@@ -3332,7 +3439,7 @@ public class AvaTaxClient {
     public ArrayList<CompanyParameterDetailModel> createCompanyParameters(Integer companyId, ArrayList<CompanyParameterDetailModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){})).call();
+        return ((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -3354,6 +3461,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this company parameter.
      * @param model The company parameters you wish to create.
      * @return ArrayList<CompanyParameterDetailModel>
@@ -3361,7 +3469,7 @@ public class AvaTaxClient {
     public Future<ArrayList<CompanyParameterDetailModel>> createCompanyParametersAsync(Integer companyId, ArrayList<CompanyParameterDetailModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){},"21.10.0"));
     }
 
     /**
@@ -3383,6 +3491,7 @@ public class AvaTaxClient {
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique identifier of the company
      * @param model The funding initialization request
      * @return FundingStatusModel
@@ -3390,7 +3499,7 @@ public class AvaTaxClient {
     public FundingStatusModel createFundingRequest(Integer id, FundingInitiateModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding/setup");
         path.applyField("id", id);
-        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){})).call();
+        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -3412,6 +3521,7 @@ public class AvaTaxClient {
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique identifier of the company
      * @param model The funding initialization request
      * @return FundingStatusModel
@@ -3419,7 +3529,7 @@ public class AvaTaxClient {
     public Future<FundingStatusModel> createFundingRequestAsync(Integer id, FundingInitiateModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding/setup");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){}));
+        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){},"21.10.0"));
     }
 
     /**
@@ -3431,13 +3541,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the company you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteCompany(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -3449,13 +3560,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the company you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteCompanyAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -3472,6 +3584,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param id The parameter id
      * @return ArrayList<ErrorDetail>
@@ -3480,7 +3593,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -3497,6 +3610,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param id The parameter id
      * @return ArrayList<ErrorDetail>
@@ -3505,7 +3619,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -3521,13 +3635,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique identifier of the company
      * @return FundingConfigurationModel
      */
     public FundingConfigurationModel fundingConfigurationByCompany(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configuration");
         path.applyField("companyId", companyId);
-        return ((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){})).call();
+        return ((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -3543,13 +3658,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique identifier of the company
      * @return FundingConfigurationModel
      */
     public Future<FundingConfigurationModel> fundingConfigurationByCompanyAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configuration");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){}));
+        return this.threadPool.submit((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){},"21.10.0"));
     }
 
     /**
@@ -3565,6 +3681,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique identifier of the company
      * @param currency The currency of the funding. USD and CAD are the only valid currencies
      * @return ArrayList<FundingConfigurationModel>
@@ -3573,7 +3690,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configurations");
         path.applyField("companyId", companyId);
         path.addQuery("currency", currency);
-        return ((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){})).call();
+        return ((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -3589,6 +3706,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique identifier of the company
      * @param currency The currency of the funding. USD and CAD are the only valid currencies
      * @return ArrayList<FundingConfigurationModel>
@@ -3597,7 +3715,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configurations");
         path.applyField("companyId", companyId);
         path.addQuery("currency", currency);
-        return this.threadPool.submit((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -3621,6 +3739,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the company to retrieve.
      * @param include OPTIONAL: A comma separated list of special fetch options.      * Child objects - Specify one or more of the following to retrieve objects related to each company: "Contacts", "FilingCalendars", "Items", "Locations", "Nexus", "TaxCodes", "NonReportingChildren" or "TaxRules".   * Deleted objects - Specify "FetchDeleted" to retrieve information about previously deleted objects.
      * @return CompanyModel
@@ -3629,7 +3748,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){})).call();
+        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -3653,6 +3772,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the company to retrieve.
      * @param include OPTIONAL: A comma separated list of special fetch options.      * Child objects - Specify one or more of the following to retrieve objects related to each company: "Contacts", "FilingCalendars", "Items", "Locations", "Nexus", "TaxCodes", "NonReportingChildren" or "TaxRules".   * Deleted objects - Specify "FetchDeleted" to retrieve information about previously deleted objects.
      * @return CompanyModel
@@ -3661,7 +3781,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){}));
+        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){},"21.10.0"));
     }
 
     /**
@@ -3684,13 +3804,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return ArrayList<CompanyConfigurationModel>
      */
     public ArrayList<CompanyConfigurationModel> getCompanyConfiguration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){})).call();
+        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -3713,13 +3834,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return ArrayList<CompanyConfigurationModel>
      */
     public Future<ArrayList<CompanyConfigurationModel>> getCompanyConfigurationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -3737,6 +3859,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId 
      * @param id 
      * @return CompanyParameterDetailModel
@@ -3745,7 +3868,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){})).call();
+        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -3763,6 +3886,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId 
      * @param id 
      * @return CompanyParameterDetailModel
@@ -3771,7 +3895,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){}));
+        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){},"21.10.0"));
     }
 
     /**
@@ -3796,13 +3920,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return String
      */
     public String getFilingStatus(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -3827,13 +3952,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return String
      */
     public Future<String> getFilingStatusAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -3854,6 +3980,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -3868,7 +3995,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){})).call();
+        return ((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -3889,6 +4016,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -3903,7 +4031,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){},"21.10.0"));
     }
 
     /**
@@ -3919,13 +4047,14 @@ public class AvaTaxClient {
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique identifier of the company
      * @return ArrayList<FundingStatusModel>
      */
     public ArrayList<FundingStatusModel> listFundingRequestsByCompany(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){})).call();
+        return ((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -3941,13 +4070,14 @@ public class AvaTaxClient {
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique identifier of the company
      * @return ArrayList<FundingStatusModel>
      */
     public Future<ArrayList<FundingStatusModel>> listFundingRequestsByCompanyAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -3961,11 +4091,12 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @return FetchResult<MrsCompanyModel>
      */
     public FetchResult<MrsCompanyModel> listMrsCompanies() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
-        return ((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){})).call();
+        return ((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -3979,11 +4110,12 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @return FetchResult<MrsCompanyModel>
      */
     public Future<FetchResult<MrsCompanyModel>> listMrsCompaniesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
-        return this.threadPool.submit((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"21.10.0"));
     }
 
     /**
@@ -4011,6 +4143,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters, supplierandcustomers
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -4025,7 +4158,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){})).call();
+        return ((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -4053,6 +4186,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters, supplierandcustomers
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -4067,7 +4201,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){},"21.10.0"));
     }
 
     /**
@@ -4090,6 +4224,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @param model 
      * @return ArrayList<CompanyConfigurationModel>
@@ -4097,7 +4232,7 @@ public class AvaTaxClient {
     public ArrayList<CompanyConfigurationModel> setCompanyConfiguration(Integer id, ArrayList<CompanyConfigurationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){})).call();
+        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -4120,6 +4255,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @param model 
      * @return ArrayList<CompanyConfigurationModel>
@@ -4127,7 +4263,7 @@ public class AvaTaxClient {
     public Future<ArrayList<CompanyConfigurationModel>> setCompanyConfigurationAsync(Integer id, ArrayList<CompanyConfigurationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -4149,6 +4285,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the company you wish to update.
      * @param model The company object you wish to update.
      * @return CompanyModel
@@ -4156,7 +4293,7 @@ public class AvaTaxClient {
     public CompanyModel updateCompany(Integer id, CompanyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){})).call();
+        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -4178,6 +4315,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the company you wish to update.
      * @param model The company object you wish to update.
      * @return CompanyModel
@@ -4185,7 +4323,7 @@ public class AvaTaxClient {
     public Future<CompanyModel> updateCompanyAsync(Integer id, CompanyModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){}));
+        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){},"21.10.0"));
     }
 
     /**
@@ -4203,6 +4341,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param id The company parameter id
      * @param model The company parameter object you wish to update.
@@ -4212,7 +4351,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){})).call();
+        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -4230,6 +4369,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param id The company parameter id
      * @param model The company parameter object you wish to update.
@@ -4239,7 +4379,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){}));
+        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){},"21.10.0"));
     }
 
     /**
@@ -4253,6 +4393,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this contact.
      * @param model The contacts you wish to create.
      * @return ArrayList<ContactModel>
@@ -4260,7 +4401,7 @@ public class AvaTaxClient {
     public ArrayList<ContactModel> createContacts(Integer companyId, ArrayList<ContactModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){})).call();
+        return ((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -4274,6 +4415,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this contact.
      * @param model The contacts you wish to create.
      * @return ArrayList<ContactModel>
@@ -4281,7 +4423,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ContactModel>> createContactsAsync(Integer companyId, ArrayList<ContactModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){},"21.10.0"));
     }
 
     /**
@@ -4293,6 +4435,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this contact.
      * @param id The ID of the contact you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -4301,7 +4444,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -4313,6 +4456,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this contact.
      * @param id The ID of the contact you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -4321,7 +4465,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -4335,6 +4479,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company for this contact
      * @param id The primary key of this contact
      * @return ContactModel
@@ -4343,7 +4488,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){})).call();
+        return ((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -4357,6 +4502,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company for this contact
      * @param id The primary key of this contact
      * @return ContactModel
@@ -4365,7 +4511,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){}));
+        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){},"21.10.0"));
     }
 
     /**
@@ -4380,6 +4526,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these contacts
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -4394,7 +4541,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){})).call();
+        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -4409,6 +4556,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these contacts
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -4423,7 +4571,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"21.10.0"));
     }
 
     /**
@@ -4440,6 +4588,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -4452,7 +4601,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){})).call();
+        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -4469,6 +4618,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -4481,7 +4631,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"21.10.0"));
     }
 
     /**
@@ -4497,6 +4647,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this contact belongs to.
      * @param id The ID of the contact you wish to update
      * @param model The contact you wish to update.
@@ -4506,7 +4657,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){})).call();
+        return ((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -4522,6 +4673,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this contact belongs to.
      * @param id The ID of the contact you wish to update
      * @param model The contact you wish to update.
@@ -4531,7 +4683,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){}));
+        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){},"21.10.0"));
     }
 
     /**
@@ -4558,6 +4710,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
      * @return ArrayList<CustomerModel>
@@ -4565,7 +4718,7 @@ public class AvaTaxClient {
     public ArrayList<CustomerModel> createCustomers(Integer companyId, ArrayList<CustomerModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){})).call();
+        return ((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -4592,6 +4745,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
      * @return ArrayList<CustomerModel>
@@ -4599,7 +4753,7 @@ public class AvaTaxClient {
     public Future<ArrayList<CustomerModel>> createCustomersAsync(Integer companyId, ArrayList<CustomerModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){},"21.10.0"));
     }
 
     /**
@@ -4623,6 +4777,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @return CustomerModel
@@ -4631,7 +4786,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<CustomerModel>(){})).call();
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<CustomerModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -4655,6 +4810,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @return CustomerModel
@@ -4663,7 +4819,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<CustomerModel>(){}));
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<CustomerModel>(){},"21.10.0"));
     }
 
     /**
@@ -4693,6 +4849,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param include Specify optional additional objects to include in this fetch request
@@ -4703,7 +4860,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
         path.addQuery("$include", include);
-        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){})).call();
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -4733,6 +4890,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param include Specify optional additional objects to include in this fetch request
@@ -4743,7 +4901,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){}));
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){},"21.10.0"));
     }
 
     /**
@@ -4770,6 +4928,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
      * @param model The list of attributes to link to the customer.
@@ -4779,7 +4938,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){})).call();
+        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -4806,6 +4965,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
      * @param model The list of attributes to link to the customer.
@@ -4815,7 +4975,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -4839,6 +4999,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param model The list of certificates to link to this customer
@@ -4848,7 +5009,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){})).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -4872,6 +5033,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param model The list of certificates to link to this customer
@@ -4881,7 +5043,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"21.10.0"));
     }
 
     /**
@@ -4906,6 +5068,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company defining customers.
      * @param code The code of the bill-to customer to link.
      * @param model A list of information about ship-to customers to link to this bill-to customer.
@@ -4915,7 +5078,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/billto/{code}/shipto/link");
         path.applyField("companyId", companyId);
         path.applyField("code", code);
-        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){})).call();
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -4940,6 +5103,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company defining customers.
      * @param code The code of the bill-to customer to link.
      * @param model A list of information about ship-to customers to link to this bill-to customer.
@@ -4949,7 +5113,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/billto/{code}/shipto/link");
         path.applyField("companyId", companyId);
         path.applyField("code", code);
-        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){}));
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){},"21.10.0"));
     }
 
     /**
@@ -4976,6 +5140,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
      * @return FetchResult<CustomerAttributeModel>
@@ -4984,7 +5149,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){})).call();
+        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5011,6 +5176,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
      * @return FetchResult<CustomerAttributeModel>
@@ -5019,7 +5185,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -5043,6 +5209,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * customers - Retrieves the list of customers linked to the certificate.   * po_numbers - Retrieves all PO numbers tied to the certificate.   * attributes - Retrieves all attributes applied to the certificate.
@@ -5061,7 +5228,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){})).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5085,6 +5252,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * customers - Retrieves the list of customers linked to the certificate.   * po_numbers - Retrieves all PO numbers tied to the certificate.   * attributes - Retrieves all attributes applied to the certificate.
@@ -5103,7 +5271,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"21.10.0"));
     }
 
     /**
@@ -5130,6 +5298,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param country Search for certificates matching this country. Uses the ISO 3166 two character country code.
@@ -5142,7 +5311,7 @@ public class AvaTaxClient {
         path.applyField("customerCode", customerCode);
         path.applyField("country", country);
         path.applyField("region", region);
-        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){})).call();
+        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -5169,6 +5338,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param country Search for certificates matching this country. Uses the ISO 3166 two character country code.
@@ -5181,7 +5351,7 @@ public class AvaTaxClient {
         path.applyField("customerCode", customerCode);
         path.applyField("country", country);
         path.applyField("region", region);
-        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){}));
+        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"21.10.0"));
     }
 
     /**
@@ -5210,6 +5380,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* shipTos
@@ -5226,7 +5397,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){})).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5255,6 +5426,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* shipTos
@@ -5271,7 +5443,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"21.10.0"));
     }
 
     /**
@@ -5298,6 +5470,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded the customer
      * @param customerCode The unique code representing the current customer
      * @param model The list of attributes to unlink from the customer.
@@ -5307,7 +5480,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){})).call();
+        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5334,6 +5507,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded the customer
      * @param customerCode The unique code representing the current customer
      * @param model The list of attributes to unlink from the customer.
@@ -5343,7 +5517,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -5367,6 +5541,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param model The list of certificates to link to this customer
@@ -5376,7 +5551,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){})).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5400,6 +5575,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param model The list of certificates to link to this customer
@@ -5409,7 +5585,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"21.10.0"));
     }
 
     /**
@@ -5433,6 +5609,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param model The new customer model that will replace the existing record at this URL
@@ -5442,7 +5619,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){})).call();
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -5466,6 +5643,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param model The new customer model that will replace the existing record at this URL
@@ -5475,7 +5653,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){}));
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){},"21.10.0"));
     }
 
     /**
@@ -5488,6 +5666,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The id of the company you which to create the datasources
      * @param model 
      * @return ArrayList<DataSourceModel>
@@ -5495,7 +5674,7 @@ public class AvaTaxClient {
     public ArrayList<DataSourceModel> createDataSources(Integer companyId, ArrayList<DataSourceModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){})).call();
+        return ((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5508,6 +5687,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The id of the company you which to create the datasources
      * @param model 
      * @return ArrayList<DataSourceModel>
@@ -5515,7 +5695,7 @@ public class AvaTaxClient {
     public Future<ArrayList<DataSourceModel>> createDataSourcesAsync(Integer companyId, ArrayList<DataSourceModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){},"21.10.0"));
     }
 
     /**
@@ -5528,6 +5708,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -5536,7 +5717,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5549,6 +5730,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -5557,7 +5739,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -5570,6 +5752,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId 
      * @param id data source id
      * @return DataSourceModel
@@ -5578,7 +5761,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){})).call();
+        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -5591,6 +5774,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId 
      * @param id data source id
      * @return DataSourceModel
@@ -5599,7 +5783,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){}));
+        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){},"21.10.0"));
     }
 
     /**
@@ -5612,6 +5796,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The id of the company you wish to retrieve the datasources.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -5626,7 +5811,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){})).call();
+        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5639,6 +5824,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The id of the company you wish to retrieve the datasources.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -5653,7 +5839,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"21.10.0"));
     }
 
     /**
@@ -5669,6 +5855,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -5681,7 +5868,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){})).call();
+        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5697,6 +5884,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -5709,7 +5897,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"21.10.0"));
     }
 
     /**
@@ -5722,6 +5910,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
      * @param model 
@@ -5731,7 +5920,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){})).call();
+        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -5744,6 +5933,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
      * @param model 
@@ -5753,7 +5943,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){}));
+        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){},"21.10.0"));
     }
 
     /**
@@ -5774,6 +5964,7 @@ public class AvaTaxClient {
      * 
      * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The name or code of the destination country.
      * @param hsCode The partial or full HS Code for which you would like to view all of the parents.
      * @return FetchResult<HsCodeModel>
@@ -5782,7 +5973,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}/hierarchy");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){})).call();
+        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5803,6 +5994,7 @@ public class AvaTaxClient {
      * 
      * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The name or code of the destination country.
      * @param hsCode The partial or full HS Code for which you would like to view all of the parents.
      * @return FetchResult<HsCodeModel>
@@ -5811,7 +6003,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}/hierarchy");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -5819,6 +6011,7 @@ public class AvaTaxClient {
      * 
      * This API is intended to be useful to identify whether the user should be allowed
      * 
+     * Swagger Name: AvaTaxClient
      * @param form The name of the form you would like to verify. This is the tax form code
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxFormCodes, scraperType, expectedResponseTime, requiredFilingCalendarDataFields
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -5833,7 +6026,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){})).call();
+        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5841,6 +6034,7 @@ public class AvaTaxClient {
      * 
      * This API is intended to be useful to identify whether the user should be allowed
      * 
+     * Swagger Name: AvaTaxClient
      * @param form The name of the form you would like to verify. This is the tax form code
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxFormCodes, scraperType, expectedResponseTime, requiredFilingCalendarDataFields
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -5855,12 +6049,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"21.10.0"));
     }
 
     /**
      * List all market place locations.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -5873,12 +6068,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){})).call();
+        return ((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){},"21.10.0")).call();
     }
 
     /**
      * List all market place locations.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -5891,7 +6087,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){},"21.10.0"));
     }
 
     /**
@@ -5903,6 +6099,7 @@ public class AvaTaxClient {
      *             
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* outletTypeId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -5915,7 +6112,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){})).call();
+        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5927,6 +6124,7 @@ public class AvaTaxClient {
      *             
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* outletTypeId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -5939,7 +6137,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"21.10.0"));
     }
 
     /**
@@ -5952,6 +6150,7 @@ public class AvaTaxClient {
      *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyid Id of the company the user wish to fetch the certificates' attributes from. If not specified the API will use user's default company.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -5966,7 +6165,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){})).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -5979,6 +6178,7 @@ public class AvaTaxClient {
      *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyid Id of the company the user wish to fetch the certificates' attributes from. If not specified the API will use user's default company.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -5993,7 +6193,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6006,6 +6206,7 @@ public class AvaTaxClient {
      *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6018,7 +6219,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){})).call();
+        return ((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6031,6 +6232,7 @@ public class AvaTaxClient {
      *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6043,7 +6245,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6056,6 +6258,7 @@ public class AvaTaxClient {
      *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, companyId, name, tag, description, created, modified, region, country
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6068,7 +6271,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){})).call();
+        return ((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6081,6 +6284,7 @@ public class AvaTaxClient {
      *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, companyId, name, tag, description, created, modified, region, country
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6093,7 +6297,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6102,6 +6306,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported usage of extra parameters for item classification.
      * The list of parameters is available for use with Item Classification.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6114,7 +6319,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){})).call();
+        return ((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6123,6 +6328,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported usage of extra parameters for item classification.
      * The list of parameters is available for use with Item Classification.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6135,12 +6341,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){},"21.10.0"));
     }
 
     /**
      * Retrieve the full list of communications service types
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The transaction type ID to examine
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* requiredParameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -6155,12 +6362,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){})).call();
+        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"21.10.0")).call();
     }
 
     /**
      * Retrieve the full list of communications service types
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The transaction type ID to examine
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* requiredParameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -6175,7 +6383,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6183,6 +6391,7 @@ public class AvaTaxClient {
      * 
      * Returns full list of communications transaction types which
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6195,7 +6404,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6203,6 +6412,7 @@ public class AvaTaxClient {
      * 
      * Returns full list of communications transaction types which
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6215,7 +6425,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6223,6 +6433,7 @@ public class AvaTaxClient {
      * 
      * Returns full list of communications transaction/service type pairs which
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* requiredParameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6235,7 +6446,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){})).call();
+        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6243,6 +6454,7 @@ public class AvaTaxClient {
      * 
      * Returns full list of communications transaction/service type pairs which
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* requiredParameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6255,7 +6467,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6264,6 +6476,7 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 country codes, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* alpha3Code, isEuropeanUnion, localizedNames, addressesRequireRegion
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6276,7 +6489,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){})).call();
+        return ((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6285,6 +6498,7 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 country codes, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* alpha3Code, isEuropeanUnion, localizedNames, addressesRequireRegion
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6297,7 +6511,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6311,6 +6525,7 @@ public class AvaTaxClient {
      *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, companyId, subject, description, createdDate, modifiedDate, pageCount, templateFilename, version
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6323,7 +6538,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){})).call();
+        return ((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6337,6 +6552,7 @@ public class AvaTaxClient {
      *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, companyId, subject, description, createdDate, modifiedDate, pageCount, templateFilename, version
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6349,7 +6565,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6368,6 +6584,7 @@ public class AvaTaxClient {
      * 
      * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* hsCodeSource, system, destinationCountry, isDecisionNode, zeroPaddingCount, isSystemDefined, isTaxable, effDate, endDate, hsCodeSourceLength
@@ -6384,7 +6601,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){})).call();
+        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6403,6 +6620,7 @@ public class AvaTaxClient {
      * 
      * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* hsCodeSource, system, destinationCountry, isDecisionNode, zeroPaddingCount, isSystemDefined, isTaxable, effDate, endDate, hsCodeSourceLength
@@ -6419,7 +6637,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6436,11 +6654,12 @@ public class AvaTaxClient {
      * 
      * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
+     * Swagger Name: AvaTaxClient
      * @return FetchResult<HsCodeModel>
      */
     public FetchResult<HsCodeModel> listCrossBorderSections() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/sections");
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){})).call();
+        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6457,11 +6676,12 @@ public class AvaTaxClient {
      * 
      * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
+     * Swagger Name: AvaTaxClient
      * @return FetchResult<HsCodeModel>
      */
     public Future<FetchResult<HsCodeModel>> listCrossBorderSectionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/sections");
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6471,6 +6691,7 @@ public class AvaTaxClient {
      *             
      * This API produces a list of currency codes that can be used when calling AvaTax.  The values from this API can be used to fill out the
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6483,7 +6704,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){})).call();
+        return ((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6493,6 +6714,7 @@ public class AvaTaxClient {
      *             
      * This API produces a list of currency codes that can be used when calling AvaTax.  The values from this API can be used to fill out the
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6505,7 +6727,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6516,6 +6738,7 @@ public class AvaTaxClient {
      * is occurring.  This information is generally used to determine taxability of the product.
      * In order to facilitate correct reporting of your taxes, you are encouraged to select the proper entity use codes for
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* validCountries
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6528,7 +6751,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){})).call();
+        return ((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6539,6 +6762,7 @@ public class AvaTaxClient {
      * is occurring.  This information is generally used to determine taxability of the product.
      * In order to facilitate correct reporting of your taxes, you are encouraged to select the proper entity use codes for
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* validCountries
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6551,7 +6775,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6559,6 +6783,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported filing frequencies.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6571,7 +6796,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){})).call();
+        return ((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6579,6 +6804,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported filing frequencies.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6591,7 +6817,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6603,6 +6829,7 @@ public class AvaTaxClient {
      * SQL-like query for fetching only the ones you concerned about. For example: effectiveDate > '2016-01-01'
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* rate, salesRate, signatureCode, useRate
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6615,7 +6842,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){})).call();
+        return ((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6627,6 +6854,7 @@ public class AvaTaxClient {
      * SQL-like query for fetching only the ones you concerned about. For example: effectiveDate > '2016-01-01'
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* rate, salesRate, signatureCode, useRate
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6639,7 +6867,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6652,6 +6880,7 @@ public class AvaTaxClient {
      * jurisdiction in AvaTax.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param line1 The first address line portion of this address.
      * @param line2 The second address line portion of this address.
      * @param line3 The third address line portion of this address.
@@ -6678,7 +6907,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6691,6 +6920,7 @@ public class AvaTaxClient {
      * jurisdiction in AvaTax.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param line1 The first address line portion of this address.
      * @param line2 The second address line portion of this address.
      * @param line3 The third address line portion of this address.
@@ -6717,7 +6947,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6729,6 +6959,7 @@ public class AvaTaxClient {
      * SQL-like query for fetching only the ones you concerned about. For example: effectiveDate > '2016-01-01'
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country for which you want to retrieve the jurisdiction information
      * @param region The region for which you want to retrieve the jurisdiction information
      * @param taxTypeId The taxtype for which you want to retrieve the jurisdiction information
@@ -6751,7 +6982,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){})).call();
+        return ((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6763,6 +6994,7 @@ public class AvaTaxClient {
      * SQL-like query for fetching only the ones you concerned about. For example: effectiveDate > '2016-01-01'
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country for which you want to retrieve the jurisdiction information
      * @param region The region for which you want to retrieve the jurisdiction information
      * @param taxTypeId The taxtype for which you want to retrieve the jurisdiction information
@@ -6785,7 +7017,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6797,6 +7029,7 @@ public class AvaTaxClient {
      * This information is not usually required in order to calculate tax correctly, but is almost always required to file your tax correctly.
      * You can call this API call for any address and obtain information about what questions must be answered in order to properly
      * 
+     * Swagger Name: AvaTaxClient
      * @param line1 The first line of this location's address.
      * @param line2 The second line of this location's address.
      * @param line3 The third line of this location's address.
@@ -6827,7 +7060,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){})).call();
+        return ((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6839,6 +7072,7 @@ public class AvaTaxClient {
      * This information is not usually required in order to calculate tax correctly, but is almost always required to file your tax correctly.
      * You can call this API call for any address and obtain information about what questions must be answered in order to properly
      * 
+     * Swagger Name: AvaTaxClient
      * @param line1 The first line of this location's address.
      * @param line2 The second line of this location's address.
      * @param line3 The third line of this location's address.
@@ -6869,7 +7103,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6878,6 +7112,7 @@ public class AvaTaxClient {
      * List all forms where logins can be verified automatically.
      * This API is intended to be useful to identify whether the user should be allowed
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxFormCodes, scraperType, expectedResponseTime, requiredFilingCalendarDataFields
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6890,7 +7125,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){})).call();
+        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6899,6 +7134,7 @@ public class AvaTaxClient {
      * List all forms where logins can be verified automatically.
      * This API is intended to be useful to identify whether the user should be allowed
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxFormCodes, scraperType, expectedResponseTime, requiredFilingCalendarDataFields
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6911,12 +7147,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"21.10.0"));
     }
 
     /**
      * Retrieve the list of locations for a marketplace.
      * 
+     * Swagger Name: AvaTaxClient
      * @param marketplaceId MarketplaceId of a marketplace
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6929,12 +7166,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){})).call();
+        return ((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){},"21.10.0")).call();
     }
 
     /**
      * Retrieve the list of locations for a marketplace.
      * 
+     * Swagger Name: AvaTaxClient
      * @param marketplaceId MarketplaceId of a marketplace
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6947,7 +7185,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -6956,6 +7194,7 @@ public class AvaTaxClient {
      * Returns the full list of all Avalara-supported nexus for all countries and regions.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6968,7 +7207,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -6977,6 +7216,7 @@ public class AvaTaxClient {
      * Returns the full list of all Avalara-supported nexus for all countries and regions.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -6989,7 +7229,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7000,6 +7240,7 @@ public class AvaTaxClient {
      * In general, it is usually expected that a company will declare nexus in all the jurisdictions that apply to each physical address
      * where the company does business.
      * 
+     * Swagger Name: AvaTaxClient
      * @param line1 The first address line portion of this address.
      * @param line2 The first address line portion of this address.
      * @param line3 The first address line portion of this address.
@@ -7026,7 +7267,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7037,6 +7278,7 @@ public class AvaTaxClient {
      * In general, it is usually expected that a company will declare nexus in all the jurisdictions that apply to each physical address
      * where the company does business.
      * 
+     * Swagger Name: AvaTaxClient
      * @param line1 The first address line portion of this address.
      * @param line2 The first address line portion of this address.
      * @param line3 The first address line portion of this address.
@@ -7063,7 +7305,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7072,6 +7314,7 @@ public class AvaTaxClient {
      * Returns all Avalara-supported nexus for the specified country.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country in which you want to fetch the system nexus
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -7086,7 +7329,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7095,6 +7338,7 @@ public class AvaTaxClient {
      * Returns all Avalara-supported nexus for the specified country.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country in which you want to fetch the system nexus
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -7109,7 +7353,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7118,6 +7362,7 @@ public class AvaTaxClient {
      * Returns all Avalara-supported nexus for the specified country and region.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
@@ -7134,7 +7379,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7143,6 +7388,7 @@ public class AvaTaxClient {
      * Returns all Avalara-supported nexus for the specified country and region.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
@@ -7159,7 +7405,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7181,13 +7427,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
     public NexusByTaxFormModel listNexusByFormCode(String formCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.applyField("formCode", formCode);
-        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){})).call();
+        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -7209,13 +7456,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
     public Future<NexusByTaxFormModel> listNexusByFormCodeAsync(String formCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.applyField("formCode", formCode);
-        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){}));
+        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"21.10.0"));
     }
 
     /**
@@ -7224,6 +7472,7 @@ public class AvaTaxClient {
      * Returns all Avalara-supported nexus for the specified specified tax type group.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param taxTypeGroup The tax type group to fetch the supporting system nexus for.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -7238,7 +7487,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7247,6 +7496,7 @@ public class AvaTaxClient {
      * Returns all Avalara-supported nexus for the specified specified tax type group.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param taxTypeGroup The tax type group to fetch the supporting system nexus for.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -7261,7 +7511,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7269,6 +7519,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported nexus tax type groups
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionTypeId, subscriptionDescription, tabName, showColumn
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7281,7 +7532,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){})).call();
+        return ((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7289,6 +7540,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported nexus tax type groups
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionTypeId, subscriptionDescription, tabName, showColumn
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7301,7 +7553,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7309,6 +7561,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer funding options.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7321,7 +7574,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){})).call();
+        return ((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7329,6 +7582,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer funding options.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7341,7 +7595,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7349,6 +7603,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer types.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7361,7 +7616,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7369,6 +7624,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer types.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7381,7 +7637,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7389,6 +7645,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice filing types.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* description, activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7401,7 +7658,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7409,6 +7666,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice filing types.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* description, activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7421,7 +7679,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7429,6 +7687,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice priorities.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7441,7 +7700,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){})).call();
+        return ((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7449,6 +7708,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice priorities.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7461,7 +7721,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7469,6 +7729,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice reasons.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* description, activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7481,7 +7742,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){})).call();
+        return ((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7489,6 +7750,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice reasons.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* description, activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7501,7 +7763,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7509,6 +7771,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice responsibility ids
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7521,7 +7784,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){})).call();
+        return ((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7529,6 +7792,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice responsibility ids
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7541,7 +7805,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7549,6 +7813,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice root causes
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7561,7 +7826,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){})).call();
+        return ((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7569,6 +7834,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice root causes
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7581,7 +7847,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7589,6 +7855,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice statuses.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isOpen, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7601,7 +7868,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){})).call();
+        return ((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7609,6 +7876,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice statuses.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isOpen, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7621,7 +7889,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7629,6 +7897,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice types.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7641,7 +7910,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7649,6 +7918,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice types.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* activeFlag, sortOrder
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7661,7 +7931,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7670,6 +7940,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported extra parameters for the 'Create Transaction' API call.
      * This list of parameters is available for use when configuring your transaction.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* serviceTypes, regularExpression, values
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7682,7 +7953,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){})).call();
+        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7691,6 +7962,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported extra parameters for the 'Create Transaction' API call.
      * This list of parameters is available for use when configuring your transaction.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* serviceTypes, regularExpression, values
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7703,7 +7975,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7724,6 +7996,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode Company code.
      * @param itemCode Item code.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* serviceTypes, regularExpression, values
@@ -7740,7 +8013,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){})).call();
+        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7761,6 +8034,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode Company code.
      * @param itemCode Item code.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* serviceTypes, regularExpression, values
@@ -7777,7 +8051,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7786,6 +8060,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported usage of extra parameters for the 'Create Transaction' API call.
      * This list of parameters is available for use when configuring your transaction.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7798,7 +8073,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){})).call();
+        return ((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7807,6 +8082,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported usage of extra parameters for the 'Create Transaction' API call.
      * This list of parameters is available for use when configuring your transaction.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7819,7 +8095,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7827,6 +8103,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
+     * Swagger Name: AvaTaxClient
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @return FetchResult<String>
@@ -7835,7 +8112,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){})).call();
+        return ((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7843,6 +8120,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
+     * Swagger Name: AvaTaxClient
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @return FetchResult<String>
@@ -7851,12 +8129,13 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){},"21.10.0"));
     }
 
     /**
      * Retrieve the full list of Avalara-supported postal codes.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7869,12 +8148,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){})).call();
+        return ((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){},"21.10.0")).call();
     }
 
     /**
      * Retrieve the full list of Avalara-supported postal codes.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7887,7 +8167,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7902,6 +8182,7 @@ public class AvaTaxClient {
      * To select a preferred program for calculating customs and duty rates, call this API to find the appropriate code for your
      * preferred program.  Next, set the parameter `AvaTax.LC.PreferredProgram` in your `CreateTransaction` call to the code of
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* effectiveDate, endDate
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7914,7 +8195,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){})).call();
+        return ((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7929,6 +8210,7 @@ public class AvaTaxClient {
      * To select a preferred program for calculating customs and duty rates, call this API to find the appropriate code for your
      * preferred program.  Next, set the parameter `AvaTax.LC.PreferredProgram` in your `CreateTransaction` call to the code of
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* effectiveDate, endDate
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7941,7 +8223,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){},"21.10.0"));
     }
 
     /**
@@ -7951,6 +8233,7 @@ public class AvaTaxClient {
      *             
      * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* countries
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7965,7 +8248,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){})).call();
+        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -7975,6 +8258,7 @@ public class AvaTaxClient {
      *             
      * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* countries
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7989,7 +8273,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8007,6 +8291,7 @@ public class AvaTaxClient {
      * * Replace '?' with '\_-ava3f-\_'  For example: 'Company?Code' becomes 'Company_-ava3f-_Code'
      * * Replace '%' with '\_-ava25-\_'  For example: 'Company%Code' becomes 'Company_-ava25-_Code'
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* countries
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -8023,7 +8308,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){})).call();
+        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8041,6 +8326,7 @@ public class AvaTaxClient {
      * * Replace '?' with '\_-ava3f-\_'  For example: 'Company?Code' becomes 'Company_-ava3f-_Code'
      * * Replace '%' with '\_-ava25-\_'  For example: 'Company%Code' becomes 'Company_-ava25-_Code'
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* countries
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -8057,7 +8343,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8065,6 +8351,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported rate type file types
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country to examine for rate types
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -8079,7 +8366,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8087,6 +8374,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported rate type file types
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country to examine for rate types
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -8101,7 +8389,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8109,6 +8397,7 @@ public class AvaTaxClient {
      * 
      * Returns the list of Avalara-supported rate type file types
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country to examine for rate types
      * @param taxTypeId The taxType for the country to examine for rate types
      * @param taxSubTypeId The taxSubType for the country and taxType to examine for rate types
@@ -8127,7 +8416,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){})).call();
+        return ((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8135,6 +8424,7 @@ public class AvaTaxClient {
      * 
      * Returns the list of Avalara-supported rate type file types
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country to examine for rate types
      * @param taxTypeId The taxType for the country to examine for rate types
      * @param taxSubTypeId The taxSubType for the country and taxType to examine for rate types
@@ -8153,7 +8443,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8162,6 +8452,7 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* localizedNames
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8174,7 +8465,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){})).call();
+        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8183,6 +8474,7 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* localizedNames
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8195,7 +8487,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8204,6 +8496,7 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes for a specific country code, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country of which you want to fetch ISO 3166 regions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* localizedNames
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -8218,7 +8511,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){})).call();
+        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8227,6 +8520,7 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes for a specific country code, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country of which you want to fetch ISO 3166 regions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* localizedNames
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -8241,7 +8535,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8249,6 +8543,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported resource file types
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8261,7 +8556,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8269,6 +8564,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported resource file types
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8281,7 +8577,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8290,6 +8586,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported usage of extra parameters for the returns.
      * This list of parameters is available for use with Returns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8302,7 +8599,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){})).call();
+        return ((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8311,6 +8608,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported usage of extra parameters for the returns.
      * This list of parameters is available for use with Returns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8323,7 +8621,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8332,6 +8630,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported permission types.
      * This API is intended to be useful when designing a user interface for selecting the security role of a user account.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8344,7 +8643,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){})).call();
+        return ((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8353,6 +8652,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported permission types.
      * This API is intended to be useful when designing a user interface for selecting the security role of a user account.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8365,7 +8665,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8375,6 +8675,7 @@ public class AvaTaxClient {
      * This API is intended to be useful for identifying which features you have added to your account.
      * You may always contact Avalara's sales department for information on available products or services.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8387,7 +8688,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8397,6 +8698,7 @@ public class AvaTaxClient {
      * This API is intended to be useful for identifying which features you have added to your account.
      * You may always contact Avalara's sales department for information on available products or services.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8409,12 +8711,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"21.10.0"));
     }
 
     /**
      * Retrieve the list all tags supported by avalara
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8427,12 +8730,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){})).call();
+        return ((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){},"21.10.0")).call();
     }
 
     /**
      * Retrieve the list all tags supported by avalara
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8445,7 +8749,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8453,6 +8757,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authorities.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8465,7 +8770,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8473,6 +8778,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authorities.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8485,7 +8791,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8495,6 +8801,7 @@ public class AvaTaxClient {
      * This list represents tax forms that Avalara recognizes.
      * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8507,7 +8814,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8517,6 +8824,7 @@ public class AvaTaxClient {
      * This list represents tax forms that Avalara recognizes.
      * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8529,7 +8837,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8537,6 +8845,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authority types.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8549,7 +8858,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8557,6 +8866,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authority types.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8569,7 +8879,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8585,6 +8895,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8597,7 +8908,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8613,6 +8924,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8625,7 +8937,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8634,6 +8946,7 @@ public class AvaTaxClient {
      * Returns the full list of recognized tax code types.
      * A 'Tax Code Type' represents a broad category of tax codes, and is less detailed than a single TaxCode.
      * 
+     * Swagger Name: AvaTaxClient
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @return TaxCodeTypesModel
@@ -8642,7 +8955,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodetypes");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){})).call();
+        return ((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -8651,6 +8964,7 @@ public class AvaTaxClient {
      * Returns the full list of recognized tax code types.
      * A 'Tax Code Type' represents a broad category of tax codes, and is less detailed than a single TaxCode.
      * 
+     * Swagger Name: AvaTaxClient
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @return TaxCodeTypesModel
@@ -8659,7 +8973,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodetypes");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){}));
+        return this.threadPool.submit((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){},"21.10.0"));
     }
 
     /**
@@ -8667,6 +8981,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported Tax Forms
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8679,7 +8994,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){})).call();
+        return ((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8687,6 +9002,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported Tax Forms
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8699,7 +9015,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8707,6 +9023,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8719,7 +9036,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8727,6 +9044,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8739,7 +9057,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8747,6 +9065,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country to examine for taxsubtype
      * @param taxTypeId The taxType for the country to examine for taxsubtype
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -8763,7 +9082,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8771,6 +9090,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country to examine for taxsubtype
      * @param taxTypeId The taxType for the country to examine for taxsubtype
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -8787,7 +9107,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8795,6 +9115,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types by jurisdiction and region
      * 
+     * Swagger Name: AvaTaxClient
      * @param jurisdictionCode The jurisdiction code of the tax sub type.
      * @param region The region of the tax sub type.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -8811,7 +9132,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8819,6 +9140,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types by jurisdiction and region
      * 
+     * Swagger Name: AvaTaxClient
      * @param jurisdictionCode The jurisdiction code of the tax sub type.
      * @param region The region of the tax sub type.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -8835,7 +9157,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8843,6 +9165,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax type groups
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionTypeId, subscriptionDescription, tabName, showColumn, displaySequence
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8855,7 +9178,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8863,6 +9186,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax type groups
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionTypeId, subscriptionDescription, tabName, showColumn, displaySequence
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8875,12 +9199,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){},"21.10.0"));
     }
 
     /**
      * Retrieve the list of applicable TaxTypes
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country for which you want to retrieve the unitofbasis information
      * @param companyId Your companyId to retrieve the applicable taxtypes
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -8895,12 +9220,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){},"21.10.0")).call();
     }
 
     /**
      * Retrieve the list of applicable TaxTypes
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country for which you want to retrieve the unitofbasis information
      * @param companyId Your companyId to retrieve the applicable taxtypes
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -8915,12 +9241,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){},"21.10.0"));
     }
 
     /**
      * Retrieve the list of applicable UnitOfBasis
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country for which you want to retrieve the unitofbasis information
      * @param taxTypeId The taxtype for which you want to retrieve the unitofbasis information
      * @param taxSubTypeId The taxsubtype for which you want to retrieve the unitofbasis information
@@ -8939,12 +9266,13 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){})).call();
+        return ((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"21.10.0")).call();
     }
 
     /**
      * Retrieve the list of applicable UnitOfBasis
      * 
+     * Swagger Name: AvaTaxClient
      * @param country The country for which you want to retrieve the unitofbasis information
      * @param taxTypeId The taxtype for which you want to retrieve the unitofbasis information
      * @param taxSubTypeId The taxsubtype for which you want to retrieve the unitofbasis information
@@ -8963,7 +9291,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"21.10.0"));
     }
 
     /**
@@ -8972,6 +9300,7 @@ public class AvaTaxClient {
      * List all units of measurement systems defined by Avalara.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -8984,7 +9313,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){})).call();
+        return ((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -8993,6 +9322,7 @@ public class AvaTaxClient {
      * List all units of measurement systems defined by Avalara.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -9005,7 +9335,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){},"21.10.0"));
     }
 
     /**
@@ -9021,6 +9351,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that owns this DistanceThreshold
      * @param model The DistanceThreshold object or objects you wish to create.
      * @return ArrayList<CompanyDistanceThresholdModel>
@@ -9028,7 +9359,7 @@ public class AvaTaxClient {
     public ArrayList<CompanyDistanceThresholdModel> createDistanceThreshold(Integer companyId, ArrayList<CompanyDistanceThresholdModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){})).call();
+        return ((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -9044,6 +9375,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that owns this DistanceThreshold
      * @param model The DistanceThreshold object or objects you wish to create.
      * @return ArrayList<CompanyDistanceThresholdModel>
@@ -9051,7 +9383,7 @@ public class AvaTaxClient {
     public Future<ArrayList<CompanyDistanceThresholdModel>> createDistanceThresholdAsync(Integer companyId, ArrayList<CompanyDistanceThresholdModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){},"21.10.0"));
     }
 
     /**
@@ -9067,6 +9399,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that owns this DistanceThreshold
      * @param id The unique ID number of the DistanceThreshold object you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -9075,7 +9408,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -9091,6 +9424,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that owns this DistanceThreshold
      * @param id The unique ID number of the DistanceThreshold object you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -9099,7 +9433,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -9115,6 +9449,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this DistanceThreshold object
      * @param id The unique ID number referring to this DistanceThreshold object
      * @return CompanyDistanceThresholdModel
@@ -9123,7 +9458,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){})).call();
+        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -9139,6 +9474,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this DistanceThreshold object
      * @param id The unique ID number referring to this DistanceThreshold object
      * @return CompanyDistanceThresholdModel
@@ -9147,7 +9483,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){}));
+        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){},"21.10.0"));
     }
 
     /**
@@ -9163,6 +9499,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company whose DistanceThreshold objects you wish to list.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -9179,7 +9516,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){})).call();
+        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -9195,6 +9532,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company whose DistanceThreshold objects you wish to list.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -9211,7 +9549,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"21.10.0"));
     }
 
     /**
@@ -9230,6 +9568,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -9244,7 +9583,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){})).call();
+        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -9263,6 +9602,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -9277,7 +9617,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"21.10.0"));
     }
 
     /**
@@ -9296,6 +9636,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that owns this DistanceThreshold object.
      * @param id The unique ID number of the DistanceThreshold object to replace.
      * @param model The new DistanceThreshold object to store.
@@ -9305,7 +9646,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){})).call();
+        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -9324,6 +9665,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company that owns this DistanceThreshold object.
      * @param id The unique ID number of the DistanceThreshold object to replace.
      * @param model The new DistanceThreshold object to store.
@@ -9333,7 +9675,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){}));
+        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){},"21.10.0"));
     }
 
     /**
@@ -9347,6 +9689,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company ID that will be issued this certificate.
      * @param model 
      * @return ECommerceTokenOutputModel
@@ -9354,7 +9697,7 @@ public class AvaTaxClient {
     public ECommerceTokenOutputModel createECommerceToken(Integer companyId, CreateECommerceTokenInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return ((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){})).call();
+        return ((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -9368,6 +9711,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company ID that will be issued this certificate.
      * @param model 
      * @return ECommerceTokenOutputModel
@@ -9375,7 +9719,7 @@ public class AvaTaxClient {
     public Future<ECommerceTokenOutputModel> createECommerceTokenAsync(Integer companyId, CreateECommerceTokenInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){}));
+        return this.threadPool.submit((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){},"21.10.0"));
     }
 
     /**
@@ -9389,6 +9733,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company ID that the refreshed certificate belongs to.
      * @param model 
      * @return FetchResult<ECommerceTokenOutputModel>
@@ -9396,7 +9741,7 @@ public class AvaTaxClient {
     public FetchResult<ECommerceTokenOutputModel> refreshECommerceToken(Integer companyId, RefreshECommerceTokenInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){})).call();
+        return ((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -9410,6 +9755,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company ID that the refreshed certificate belongs to.
      * @param model 
      * @return FetchResult<ECommerceTokenOutputModel>
@@ -9417,7 +9763,7 @@ public class AvaTaxClient {
     public Future<FetchResult<ECommerceTokenOutputModel>> refreshECommerceTokenAsync(Integer companyId, RefreshECommerceTokenInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){},"21.10.0"));
     }
 
     /**
@@ -9432,6 +9778,7 @@ public class AvaTaxClient {
      * * This API requires openId bearer token for authentication
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param model Cycle Safe Options Request
      * @return CycleSafeOptionResultModel
@@ -9439,7 +9786,7 @@ public class AvaTaxClient {
     public CycleSafeOptionResultModel cycleSafeOptions(Integer companyId, CycleSafeEditRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/edit/cycleSafeOptions");
         path.applyField("companyId", companyId);
-        return ((RestCall<CycleSafeOptionResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CycleSafeOptionResultModel>(){})).call();
+        return ((RestCall<CycleSafeOptionResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CycleSafeOptionResultModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -9454,6 +9801,7 @@ public class AvaTaxClient {
      * * This API requires openId bearer token for authentication
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param model Cycle Safe Options Request
      * @return CycleSafeOptionResultModel
@@ -9461,7 +9809,7 @@ public class AvaTaxClient {
     public Future<CycleSafeOptionResultModel> cycleSafeOptionsAsync(Integer companyId, CycleSafeEditRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/edit/cycleSafeOptions");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<CycleSafeOptionResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CycleSafeOptionResultModel>(){}));
+        return this.threadPool.submit((RestCall<CycleSafeOptionResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CycleSafeOptionResultModel>(){},"21.10.0"));
     }
 
     /**
@@ -9474,6 +9822,7 @@ public class AvaTaxClient {
      * * This API requires openId bearer token for authentication
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID of the company
      * @param filingCalendarId The unique ID of the filing calendar that will remove setting
      * @param companyReturnSettingId The unique ID of the company return setting that will be deleted from the filing calendar
@@ -9484,7 +9833,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("filingCalendarId", filingCalendarId);
         path.applyField("companyReturnSettingId", companyReturnSettingId);
-        return ((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){})).call();
+        return ((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -9497,6 +9846,7 @@ public class AvaTaxClient {
      * * This API requires openId bearer token for authentication
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID of the company
      * @param filingCalendarId The unique ID of the filing calendar that will remove setting
      * @param companyReturnSettingId The unique ID of the company return setting that will be deleted from the filing calendar
@@ -9507,7 +9857,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("filingCalendarId", filingCalendarId);
         path.applyField("companyReturnSettingId", companyReturnSettingId);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){},"21.10.0"));
     }
 
     /**
@@ -9520,6 +9870,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -9538,7 +9889,7 @@ public class AvaTaxClient {
         path.addQuery("$orderBy", orderBy);
         path.addQuery("returnCountry", returnCountry);
         path.addQuery("returnRegion", returnRegion);
-        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
+        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -9551,6 +9902,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -9569,7 +9921,7 @@ public class AvaTaxClient {
         path.addQuery("$orderBy", orderBy);
         path.addQuery("returnCountry", returnCountry);
         path.addQuery("returnRegion", returnRegion);
-        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){},"21.10.0"));
     }
 
     /**
@@ -9582,6 +9934,7 @@ public class AvaTaxClient {
      * * This API requires openId bearer token for authentication
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these returns
      * @param filingReturnId The ID of the filing return
      * @return FetchResult<MultiTaxFilingModel>
@@ -9590,7 +9943,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/accrual/{filingReturnId}");
         path.applyField("companyId", companyId);
         path.applyField("filingReturnId", filingReturnId);
-        return ((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){})).call();
+        return ((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -9603,6 +9956,7 @@ public class AvaTaxClient {
      * * This API requires openId bearer token for authentication
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these returns
      * @param filingReturnId The ID of the filing return
      * @return FetchResult<MultiTaxFilingModel>
@@ -9611,7 +9965,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/accrual/{filingReturnId}");
         path.applyField("companyId", companyId);
         path.applyField("filingReturnId", filingReturnId);
-        return this.threadPool.submit((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){},"21.10.0"));
     }
 
     /**
@@ -9626,6 +9980,7 @@ public class AvaTaxClient {
      * * This API is available by invitation only.*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser, CompanyUser, AccountUser, CompanyAdmin, AccountAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these batches
      * @param endPeriodMonth The month of the period you are trying to retrieve
      * @param endPeriodYear The year of the period you are trying to retrieve
@@ -9648,7 +10003,7 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("filingCalendarId", filingCalendarId);
         path.addQuery("taxformCode", taxformCode);
-        return ((RestCall<FetchResult<FiledReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FiledReturnModel>>(){})).call();
+        return ((RestCall<FetchResult<FiledReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FiledReturnModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -9663,6 +10018,7 @@ public class AvaTaxClient {
      * * This API is available by invitation only.*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser, CompanyUser, AccountUser, CompanyAdmin, AccountAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these batches
      * @param endPeriodMonth The month of the period you are trying to retrieve
      * @param endPeriodYear The year of the period you are trying to retrieve
@@ -9685,7 +10041,7 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("filingCalendarId", filingCalendarId);
         path.addQuery("taxformCode", taxformCode);
-        return this.threadPool.submit((RestCall<FetchResult<FiledReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FiledReturnModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FiledReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FiledReturnModel>>(){},"21.10.0"));
     }
 
     /**
@@ -9697,13 +10053,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return FirmClientLinkageOutputModel
      */
     public FirmClientLinkageOutputModel approveFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/approve");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){})).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -9715,13 +10072,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return FirmClientLinkageOutputModel
      */
     public Future<FirmClientLinkageOutputModel> approveFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/approve");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){}));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0"));
     }
 
     /**
@@ -9742,12 +10100,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SystemAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Information about the account you wish to create.
      * @return FirmClientLinkageOutputModel
      */
     public FirmClientLinkageOutputModel createAndLinkNewFirmClientAccount(NewFirmClientAccountRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/createandlinkclient");
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){})).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -9768,12 +10127,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SystemAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Information about the account you wish to create.
      * @return FirmClientLinkageOutputModel
      */
     public Future<FirmClientLinkageOutputModel> createAndLinkNewFirmClientAccountAsync(NewFirmClientAccountRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/createandlinkclient");
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){}));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0"));
     }
 
     /**
@@ -9785,12 +10145,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model FirmClientLinkageInputModel
      * @return FirmClientLinkageOutputModel
      */
     public FirmClientLinkageOutputModel createFirmClientLinkage(FirmClientLinkageInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){})).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -9802,12 +10163,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model FirmClientLinkageInputModel
      * @return FirmClientLinkageOutputModel
      */
     public Future<FirmClientLinkageOutputModel> createFirmClientLinkageAsync(FirmClientLinkageInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){}));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0"));
     }
 
     /**
@@ -9819,13 +10181,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -9837,13 +10200,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -9855,13 +10219,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return FirmClientLinkageOutputModel
      */
     public FirmClientLinkageOutputModel getFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){})).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -9873,13 +10238,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return FirmClientLinkageOutputModel
      */
     public Future<FirmClientLinkageOutputModel> getFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){}));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0"));
     }
 
     /**
@@ -9891,13 +10257,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* firmAccountName, clientAccountName
      * @return FetchResult<FirmClientLinkageOutputModel>
      */
     public FetchResult<FirmClientLinkageOutputModel> listFirmClientLinkage(String filter) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
         path.addQuery("$filter", filter);
-        return ((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){})).call();
+        return ((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -9909,13 +10276,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* firmAccountName, clientAccountName
      * @return FetchResult<FirmClientLinkageOutputModel>
      */
     public Future<FetchResult<FirmClientLinkageOutputModel>> listFirmClientLinkageAsync(String filter) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
         path.addQuery("$filter", filter);
-        return this.threadPool.submit((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){},"21.10.0"));
     }
 
     /**
@@ -9927,13 +10295,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return FirmClientLinkageOutputModel
      */
     public FirmClientLinkageOutputModel rejectFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reject");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){})).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -9945,13 +10314,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return FirmClientLinkageOutputModel
      */
     public Future<FirmClientLinkageOutputModel> rejectFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reject");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){}));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0"));
     }
 
     /**
@@ -9963,13 +10333,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return FirmClientLinkageOutputModel
      */
     public FirmClientLinkageOutputModel resetFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reset");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){})).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -9981,13 +10352,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return FirmClientLinkageOutputModel
      */
     public Future<FirmClientLinkageOutputModel> resetFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reset");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){}));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0"));
     }
 
     /**
@@ -9999,13 +10371,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return FirmClientLinkageOutputModel
      */
     public FirmClientLinkageOutputModel revokeFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/revoke");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){})).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -10017,13 +10390,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id 
      * @return FirmClientLinkageOutputModel
      */
     public Future<FirmClientLinkageOutputModel> revokeFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/revoke");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){}));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"21.10.0"));
     }
 
     /**
@@ -10044,12 +10418,13 @@ public class AvaTaxClient {
      * 
      * * This API may be called without providing authentication credentials.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Required information to provision a free trial account.
      * @return NewAccountModel
      */
     public NewAccountModel requestFreeTrial(FreeTrialRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/freetrials/request");
-        return ((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){})).call();
+        return ((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -10070,12 +10445,13 @@ public class AvaTaxClient {
      * 
      * * This API may be called without providing authentication credentials.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Required information to provision a free trial account.
      * @return NewAccountModel
      */
     public Future<NewAccountModel> requestFreeTrialAsync(FreeTrialRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/freetrials/request");
-        return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){}));
+        return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"21.10.0"));
     }
 
     /**
@@ -10099,13 +10475,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
     public FundingStatusModel activateFundingRequest(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}/widget");
         path.applyField("id", id);
-        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){})).call();
+        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -10129,13 +10506,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
     public Future<FundingStatusModel> activateFundingRequestAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}/widget");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){}));
+        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"21.10.0"));
     }
 
     /**
@@ -10157,13 +10535,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
     public FundingStatusModel fundingRequestStatus(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}");
         path.applyField("id", id);
-        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){})).call();
+        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -10185,13 +10564,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
     public Future<FundingStatusModel> fundingRequestStatusAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){}));
+        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"21.10.0"));
     }
 
     /**
@@ -10207,6 +10587,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item.
      * @param itemId The ID of the item you wish to delete the classifications.
      * @return ArrayList<ErrorDetail>
@@ -10215,7 +10596,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -10231,6 +10612,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item.
      * @param itemId The ID of the item you wish to delete the classifications.
      * @return ArrayList<ErrorDetail>
@@ -10239,7 +10621,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -10257,6 +10639,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item.
      * @param itemId The ID of the item you wish to delete the parameters.
      * @return ArrayList<ErrorDetail>
@@ -10265,7 +10648,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -10283,6 +10666,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item.
      * @param itemId The ID of the item you wish to delete the parameters.
      * @return ArrayList<ErrorDetail>
@@ -10291,7 +10675,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -10311,6 +10695,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this items.
      * @param model The items you wish to upload.
      * @return ItemBulkUploadOutputModel
@@ -10318,7 +10703,7 @@ public class AvaTaxClient {
     public ItemBulkUploadOutputModel bulkUploadItems(Integer companyId, ItemBulkUploadInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/upload");
         path.applyField("companyId", companyId);
-        return ((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){})).call();
+        return ((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -10338,6 +10723,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this items.
      * @param model The items you wish to upload.
      * @return ItemBulkUploadOutputModel
@@ -10345,7 +10731,7 @@ public class AvaTaxClient {
     public Future<ItemBulkUploadOutputModel> bulkUploadItemsAsync(Integer companyId, ItemBulkUploadInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/upload");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){}));
+        return this.threadPool.submit((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){},"21.10.0"));
     }
 
     /**
@@ -10363,6 +10749,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id.
      * @param model The item classifications you wish to create.
@@ -10372,7 +10759,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){})).call();
+        return ((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -10390,6 +10777,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id.
      * @param model The item classifications you wish to create.
@@ -10399,7 +10787,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"21.10.0"));
     }
 
     /**
@@ -10421,6 +10809,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item parameter.
      * @param itemId The item id.
      * @param model The item parameters you wish to create.
@@ -10430,7 +10819,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){})).call();
+        return ((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -10452,6 +10841,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item parameter.
      * @param itemId The item id.
      * @param model The item parameters you wish to create.
@@ -10461,7 +10851,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"21.10.0"));
     }
 
     /**
@@ -10481,6 +10871,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item.
      * @param model The item you wish to create.
      * @return ArrayList<ItemModel>
@@ -10488,7 +10879,7 @@ public class AvaTaxClient {
     public ArrayList<ItemModel> createItems(Integer companyId, ArrayList<ItemModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){})).call();
+        return ((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -10508,6 +10899,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item.
      * @param model The item you wish to create.
      * @return ArrayList<ItemModel>
@@ -10515,7 +10907,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ItemModel>> createItemsAsync(Integer companyId, ArrayList<ItemModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){},"21.10.0"));
     }
 
     /**
@@ -10529,6 +10921,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items
      * @param itemId The ID of the item as defined by the company that owns this tag.
      * @param model Tags you wish to associate with the Item
@@ -10538,7 +10931,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemTagDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailModel>>(){})).call();
+        return ((RestCall<ArrayList<ItemTagDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -10552,6 +10945,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items
      * @param itemId The ID of the item as defined by the company that owns this tag.
      * @param model Tags you wish to associate with the Item
@@ -10561,7 +10955,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemTagDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ItemTagDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailModel>>(){},"21.10.0"));
     }
 
     /**
@@ -10581,6 +10975,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item.
      * @param id The ID of the item you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -10589,7 +10984,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -10609,6 +11004,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item.
      * @param id The ID of the item you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -10617,7 +11013,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -10633,6 +11029,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id.
      * @param id The item classification id.
@@ -10643,7 +11040,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -10659,6 +11056,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id.
      * @param id The item classification id.
@@ -10669,7 +11067,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -10687,6 +11085,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param itemId The item id
      * @param id The parameter id
@@ -10697,7 +11096,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -10715,6 +11114,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param itemId The item id
      * @param id The parameter id
@@ -10725,7 +11125,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -10739,6 +11139,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items
      * @param itemId The ID of the item as defined by the company that owns this tag.
      * @param itemTagDetailId The ID of the item tag detail you wish to delete.
@@ -10749,7 +11150,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("itemTagDetailId", itemTagDetailId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -10763,6 +11164,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items
      * @param itemId The ID of the item as defined by the company that owns this tag.
      * @param itemTagDetailId The ID of the item tag detail you wish to delete.
@@ -10773,7 +11175,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("itemTagDetailId", itemTagDetailId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -10787,6 +11189,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items.
      * @param itemId The ID of the item as defined by the company that owns this tag.
      * @return ArrayList<ErrorDetail>
@@ -10795,7 +11198,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -10809,6 +11212,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items.
      * @param itemId The ID of the item as defined by the company that owns this tag.
      * @return ArrayList<ErrorDetail>
@@ -10817,7 +11221,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -10835,6 +11239,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item object
      * @param id The primary key of this item
      * @param include A comma separated list of additional data to retrieve.
@@ -10845,7 +11250,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){})).call();
+        return ((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -10863,6 +11268,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item object
      * @param id The primary key of this item
      * @param include A comma separated list of additional data to retrieve.
@@ -10873,7 +11279,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){}));
+        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){},"21.10.0"));
     }
 
     /**
@@ -10889,6 +11295,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id.
      * @param id The item classification id.
@@ -10899,7 +11306,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){})).call();
+        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -10915,6 +11322,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id.
      * @param id The item classification id.
@@ -10925,7 +11333,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){}));
+        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){},"21.10.0"));
     }
 
     /**
@@ -10943,6 +11351,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param itemId The item id
      * @param id The parameter id
@@ -10953,7 +11362,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){})).call();
+        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -10971,6 +11380,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param itemId The item id
      * @param id The parameter id
@@ -10981,7 +11391,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){}));
+        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){},"21.10.0"));
     }
 
     /**
@@ -10995,6 +11405,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items
      * @param itemId The ID of the item as defined by the company that owns this tag.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* tagName
@@ -11009,7 +11420,7 @@ public class AvaTaxClient {
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<FetchResult<ItemTagDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailModel>>(){})).call();
+        return ((RestCall<FetchResult<ItemTagDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -11023,6 +11434,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items
      * @param itemId The ID of the item as defined by the company that owns this tag.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* tagName
@@ -11037,7 +11449,7 @@ public class AvaTaxClient {
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<FetchResult<ItemTagDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ItemTagDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailModel>>(){},"21.10.0"));
     }
 
     /**
@@ -11056,6 +11468,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* productCode, systemCode
@@ -11072,7 +11485,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){})).call();
+        return ((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -11091,6 +11504,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* productCode, systemCode
@@ -11107,7 +11521,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){},"21.10.0"));
     }
 
     /**
@@ -11128,6 +11542,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param itemId The item id
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit, isNeededForCalculation, isNeededForReturns, isNeededForClassification
@@ -11144,7 +11559,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){})).call();
+        return ((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -11165,6 +11580,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param itemId The item id
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit, isNeededForCalculation, isNeededForReturns, isNeededForClassification
@@ -11181,7 +11597,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){},"21.10.0"));
     }
 
     /**
@@ -11211,6 +11627,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
      * @param include A comma separated list of additional data to retrieve.
@@ -11229,7 +11646,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("tagName", tagName);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -11259,6 +11676,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
      * @param include A comma separated list of additional data to retrieve.
@@ -11277,7 +11695,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("tagName", tagName);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"21.10.0"));
     }
 
     /**
@@ -11299,6 +11717,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -11313,7 +11732,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -11335,6 +11754,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -11349,7 +11769,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"21.10.0"));
     }
 
     /**
@@ -11371,6 +11791,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items.
      * @param tag The master tag to be associated with item.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
@@ -11389,7 +11810,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -11411,6 +11832,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that defined these items.
      * @param tag The master tag to be associated with item.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
@@ -11429,7 +11851,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"21.10.0"));
     }
 
     /**
@@ -11452,6 +11874,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item.
      * @param model The request object.
      * @return SyncItemsResponseModel
@@ -11459,7 +11882,7 @@ public class AvaTaxClient {
     public SyncItemsResponseModel syncItems(Integer companyId, SyncItemsRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/sync");
         path.applyField("companyId", companyId);
-        return ((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){})).call();
+        return ((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -11482,6 +11905,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this item.
      * @param model The request object.
      * @return SyncItemsResponseModel
@@ -11489,7 +11913,7 @@ public class AvaTaxClient {
     public Future<SyncItemsResponseModel> syncItemsAsync(Integer companyId, SyncItemsRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/sync");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){}));
+        return this.threadPool.submit((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){},"21.10.0"));
     }
 
     /**
@@ -11512,6 +11936,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this item belongs to.
      * @param id The ID of the item you wish to update
      * @param model The item object you wish to update.
@@ -11521,7 +11946,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){})).call();
+        return ((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -11544,6 +11969,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this item belongs to.
      * @param id The ID of the item you wish to update
      * @param model The item object you wish to update.
@@ -11553,7 +11979,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){}));
+        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){},"21.10.0"));
     }
 
     /**
@@ -11571,6 +11997,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id.
      * @param id The item classification id.
@@ -11582,7 +12009,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){})).call();
+        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -11600,6 +12027,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id.
      * @param id The item classification id.
@@ -11611,7 +12039,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){}));
+        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){},"21.10.0"));
     }
 
     /**
@@ -11629,6 +12057,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id
      * @param id The item parameter id
@@ -11640,7 +12069,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){})).call();
+        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -11658,6 +12087,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param itemId The item id
      * @param id The item parameter id
@@ -11669,7 +12099,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){}));
+        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){},"21.10.0"));
     }
 
     /**
@@ -11686,6 +12116,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this override
      * @param model The jurisdiction override objects to create
      * @return ArrayList<JurisdictionOverrideModel>
@@ -11693,7 +12124,7 @@ public class AvaTaxClient {
     public ArrayList<JurisdictionOverrideModel> createJurisdictionOverrides(Integer accountId, ArrayList<JurisdictionOverrideModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){})).call();
+        return ((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -11710,6 +12141,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this override
      * @param model The jurisdiction override objects to create
      * @return ArrayList<JurisdictionOverrideModel>
@@ -11717,7 +12149,7 @@ public class AvaTaxClient {
     public Future<ArrayList<JurisdictionOverrideModel>> createJurisdictionOverridesAsync(Integer accountId, ArrayList<JurisdictionOverrideModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){},"21.10.0"));
     }
 
     /**
@@ -11729,6 +12161,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this override
      * @param id The ID of the override you wish to delete
      * @return ArrayList<ErrorDetail>
@@ -11737,7 +12170,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -11749,6 +12182,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this override
      * @param id The ID of the override you wish to delete
      * @return ArrayList<ErrorDetail>
@@ -11757,7 +12191,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -11774,6 +12208,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this override
      * @param id The primary key of this override
      * @return JurisdictionOverrideModel
@@ -11782,7 +12217,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){})).call();
+        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -11799,6 +12234,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this override
      * @param id The primary key of this override
      * @return JurisdictionOverrideModel
@@ -11807,7 +12243,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){}));
+        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){},"21.10.0"));
     }
 
     /**
@@ -11827,6 +12263,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this override
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* country, Jurisdictions
      * @param include A comma separated list of additional data to retrieve.
@@ -11843,7 +12280,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -11863,6 +12300,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this override
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* country, Jurisdictions
      * @param include A comma separated list of additional data to retrieve.
@@ -11879,7 +12317,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"21.10.0"));
     }
 
     /**
@@ -11899,6 +12337,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* country, Jurisdictions
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -11913,7 +12352,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -11933,6 +12372,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* country, Jurisdictions
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -11947,7 +12387,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"21.10.0"));
     }
 
     /**
@@ -11959,6 +12399,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that this jurisdictionoverride belongs to.
      * @param id The ID of the jurisdictionoverride you wish to update
      * @param model The jurisdictionoverride object you wish to update.
@@ -11968,7 +12409,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){})).call();
+        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -11980,6 +12421,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that this jurisdictionoverride belongs to.
      * @param id The ID of the jurisdictionoverride you wish to update
      * @param model The jurisdictionoverride object you wish to update.
@@ -11989,7 +12431,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){}));
+        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){},"21.10.0"));
     }
 
     /**
@@ -12011,6 +12453,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location parameter.
      * @param locationId The location id.
      * @param model The location parameters you wish to create.
@@ -12020,7 +12463,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
-        return ((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){})).call();
+        return ((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -12042,6 +12485,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location parameter.
      * @param locationId The location id.
      * @param model The location parameters you wish to create.
@@ -12051,7 +12495,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
-        return this.threadPool.submit((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){},"21.10.0"));
     }
 
     /**
@@ -12063,6 +12507,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location.
      * @param model The location you wish to create.
      * @return ArrayList<LocationModel>
@@ -12070,7 +12515,7 @@ public class AvaTaxClient {
     public ArrayList<LocationModel> createLocations(Integer companyId, ArrayList<LocationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){})).call();
+        return ((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -12082,6 +12527,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location.
      * @param model The location you wish to create.
      * @return ArrayList<LocationModel>
@@ -12089,7 +12535,7 @@ public class AvaTaxClient {
     public Future<ArrayList<LocationModel>> createLocationsAsync(Integer companyId, ArrayList<LocationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -12101,6 +12547,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location.
      * @param id The ID of the location you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -12109,7 +12556,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -12121,6 +12568,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location.
      * @param id The ID of the location you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -12129,7 +12577,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -12147,6 +12595,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param locationId The location id
      * @param id The parameter id
@@ -12157,7 +12606,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -12175,6 +12624,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param locationId The location id
      * @param id The parameter id
@@ -12185,7 +12635,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -12206,6 +12656,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
      * @param include A comma separated list of additional data to retrieve.
@@ -12216,7 +12667,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){})).call();
+        return ((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -12237,6 +12688,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
      * @param include A comma separated list of additional data to retrieve.
@@ -12247,7 +12699,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){}));
+        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){},"21.10.0"));
     }
 
     /**
@@ -12265,6 +12717,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param locationId The location id
      * @param id The parameter id
@@ -12275,7 +12728,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){})).call();
+        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -12293,6 +12746,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param locationId The location id
      * @param id The parameter id
@@ -12303,7 +12757,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){}));
+        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){},"21.10.0"));
     }
 
     /**
@@ -12324,6 +12778,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param locationId The ID of the location
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
@@ -12340,7 +12795,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){})).call();
+        return ((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -12361,6 +12816,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param locationId The ID of the location
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
@@ -12377,7 +12833,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){},"21.10.0"));
     }
 
     /**
@@ -12400,6 +12856,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these locations
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isMarketplaceOutsideUsa, settings, parameters
      * @param include A comma separated list of additional data to retrieve.
@@ -12416,7 +12873,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){})).call();
+        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -12439,6 +12896,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these locations
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isMarketplaceOutsideUsa, settings, parameters
      * @param include A comma separated list of additional data to retrieve.
@@ -12455,7 +12913,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -12479,6 +12937,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isMarketplaceOutsideUsa, settings, parameters
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -12493,7 +12952,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){})).call();
+        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -12517,6 +12976,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isMarketplaceOutsideUsa, settings, parameters
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -12531,7 +12991,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -12545,6 +13005,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this location belongs to.
      * @param id The ID of the location you wish to update
      * @param model The location you wish to update.
@@ -12554,7 +13015,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){})).call();
+        return ((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -12568,6 +13029,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this location belongs to.
      * @param id The ID of the location you wish to update
      * @param model The location you wish to update.
@@ -12577,7 +13039,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){}));
+        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){},"21.10.0"));
     }
 
     /**
@@ -12595,6 +13057,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param locationId The location id
      * @param id The location parameter id
@@ -12606,7 +13069,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){})).call();
+        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -12624,6 +13087,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param locationId The location id
      * @param id The location parameter id
@@ -12635,7 +13099,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){}));
+        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){},"21.10.0"));
     }
 
     /**
@@ -12649,6 +13113,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
      * @return LocationValidationModel
@@ -12657,7 +13122,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){})).call();
+        return ((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -12671,6 +13136,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
      * @return LocationValidationModel
@@ -12679,7 +13145,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){}));
+        return this.threadPool.submit((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){},"21.10.0"));
     }
 
     /**
@@ -12709,6 +13175,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in this fetch call
@@ -12720,7 +13187,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){})).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -12750,6 +13217,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in this fetch call
@@ -12761,7 +13229,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){}));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0"));
     }
 
     /**
@@ -12795,6 +13263,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
      * @return AuditMultiDocumentModel
@@ -12803,7 +13272,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/audit");
         path.applyField("code", code);
         path.applyField("type", type);
-        return ((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){})).call();
+        return ((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -12837,6 +13306,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
      * @return AuditMultiDocumentModel
@@ -12845,7 +13315,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/audit");
         path.applyField("code", code);
         path.applyField("type", type);
-        return this.threadPool.submit((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){}));
+        return this.threadPool.submit((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){},"21.10.0"));
     }
 
     /**
@@ -12873,12 +13343,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The commit request you wish to execute
      * @return MultiDocumentModel
      */
     public MultiDocumentModel commitMultiDocumentTransaction(CommitMultiDocumentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/commit");
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){})).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -12906,12 +13377,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The commit request you wish to execute
      * @return MultiDocumentModel
      */
     public Future<MultiDocumentModel> commitMultiDocumentTransactionAsync(CommitMultiDocumentModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/commit");
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){}));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0"));
     }
 
     /**
@@ -12963,6 +13435,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Specifies objects to include in the response after transaction is created
      * @param model the multi document transaction model
      * @return MultiDocumentModel
@@ -12970,7 +13443,7 @@ public class AvaTaxClient {
     public MultiDocumentModel createMultiDocumentTransaction(String include, CreateMultiDocumentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument");
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){})).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -13022,6 +13495,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Specifies objects to include in the response after transaction is created
      * @param model the multi document transaction model
      * @return MultiDocumentModel
@@ -13029,7 +13503,7 @@ public class AvaTaxClient {
     public Future<MultiDocumentModel> createMultiDocumentTransactionAsync(String include, CreateMultiDocumentModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){}));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0"));
     }
 
     /**
@@ -13061,6 +13535,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param code The multidocument code to retrieve
      * @param type The transaction type to retrieve (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in the response after transaction is created
@@ -13071,7 +13546,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){})).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -13103,6 +13578,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param code The multidocument code to retrieve
      * @param type The transaction type to retrieve (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in the response after transaction is created
@@ -13113,7 +13589,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){}));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"21.10.0"));
     }
 
     /**
@@ -13154,6 +13630,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of the MultiDocument transaction to retrieve
      * @param include Specifies objects to include in the response after transaction is created
      * @return MultiDocumentModel
@@ -13162,7 +13639,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){})).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -13203,6 +13680,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of the MultiDocument transaction to retrieve
      * @param include Specifies objects to include in the response after transaction is created
      * @return MultiDocumentModel
@@ -13211,7 +13689,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){}));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"21.10.0"));
     }
 
     /**
@@ -13250,6 +13728,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* documents
      * @param include Specifies objects to include in the response after transaction is created
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -13264,7 +13743,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){})).call();
+        return ((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -13303,6 +13782,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* documents
      * @param include Specifies objects to include in the response after transaction is created
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -13317,7 +13797,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){},"21.10.0"));
     }
 
     /**
@@ -13373,6 +13853,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param code The code of this MultiDocument transaction
      * @param type The type of this MultiDocument transaction (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in the response after transaction is created
@@ -13384,7 +13865,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){})).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -13440,6 +13921,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param code The code of this MultiDocument transaction
      * @param type The type of this MultiDocument transaction (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in the response after transaction is created
@@ -13451,7 +13933,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){}));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0"));
     }
 
     /**
@@ -13477,12 +13959,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Information from your accounting system to verify against this MultiDocument transaction as it is stored in AvaTax
      * @return MultiDocumentModel
      */
     public MultiDocumentModel verifyMultiDocumentTransaction(VerifyMultiDocumentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/verify");
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){})).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -13508,12 +13991,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Information from your accounting system to verify against this MultiDocument transaction as it is stored in AvaTax
      * @return MultiDocumentModel
      */
     public Future<MultiDocumentModel> verifyMultiDocumentTransactionAsync(VerifyMultiDocumentModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/verify");
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){}));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0"));
     }
 
     /**
@@ -13542,6 +14026,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
      * @param model The void request you wish to execute
@@ -13551,7 +14036,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/void");
         path.applyField("code", code);
         path.applyField("type", type);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){})).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -13580,6 +14065,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
      * @param model The void request you wish to execute
@@ -13589,7 +14075,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/void");
         path.applyField("code", code);
         path.applyField("type", type);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){}));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"21.10.0"));
     }
 
     /**
@@ -13619,6 +14105,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus.
      * @param model The nexus you wish to create.
      * @return ArrayList<NexusModel>
@@ -13626,7 +14113,7 @@ public class AvaTaxClient {
     public ArrayList<NexusModel> createNexus(Integer companyId, ArrayList<NexusModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){})).call();
+        return ((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -13656,6 +14143,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus.
      * @param model The nexus you wish to create.
      * @return ArrayList<NexusModel>
@@ -13663,7 +14151,7 @@ public class AvaTaxClient {
     public Future<ArrayList<NexusModel>> createNexusAsync(Integer companyId, ArrayList<NexusModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -13684,6 +14172,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus parameter.
      * @param nexusId The nexus id.
      * @param model The nexus parameters you wish to create.
@@ -13693,7 +14182,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return ((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){})).call();
+        return ((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -13714,6 +14203,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus parameter.
      * @param nexusId The nexus id.
      * @param model The nexus parameters you wish to create.
@@ -13723,7 +14213,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return this.threadPool.submit((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){},"21.10.0"));
     }
 
     /**
@@ -13749,6 +14239,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that will own this nexus.
      * @param model The nexus you wish to create.
      * @return ArrayList<NexusByAddressModel>
@@ -13756,7 +14247,7 @@ public class AvaTaxClient {
     public ArrayList<NexusByAddressModel> declareNexusByAddress(Integer companyId, ArrayList<DeclareNexusByAddressModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byaddress");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){})).call();
+        return ((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -13782,6 +14273,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that will own this nexus.
      * @param model The nexus you wish to create.
      * @return ArrayList<NexusByAddressModel>
@@ -13789,7 +14281,7 @@ public class AvaTaxClient {
     public Future<ArrayList<NexusByAddressModel>> declareNexusByAddressAsync(Integer companyId, ArrayList<DeclareNexusByAddressModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byaddress");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){},"21.10.0"));
     }
 
     /**
@@ -13808,6 +14300,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
      * @param cascadeDelete If true, deletes all the child nexus if they exist along with parent nexus
@@ -13818,7 +14311,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("cascadeDelete", cascadeDelete);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -13837,6 +14330,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
      * @param cascadeDelete If true, deletes all the child nexus if they exist along with parent nexus
@@ -13847,7 +14341,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("cascadeDelete", cascadeDelete);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -13864,6 +14358,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param nexusId The nexus id
      * @param id The parameter id
@@ -13874,7 +14369,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -13891,6 +14386,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param nexusId The nexus id
      * @param id The parameter id
@@ -13901,7 +14397,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -13918,6 +14414,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus.
      * @param nexusId The ID of the nexus you wish to delete the parameters.
      * @return ArrayList<ErrorDetail>
@@ -13926,7 +14423,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -13943,6 +14440,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus.
      * @param nexusId The ID of the nexus you wish to delete the parameters.
      * @return ArrayList<ErrorDetail>
@@ -13951,7 +14449,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -13970,6 +14468,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus object
      * @param id The primary key of this nexus
      * @param include 
@@ -13980,7 +14479,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){})).call();
+        return ((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -13999,6 +14498,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus object
      * @param id The primary key of this nexus
      * @param include 
@@ -14009,7 +14509,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){}));
+        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){},"21.10.0"));
     }
 
     /**
@@ -14032,6 +14532,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus object
      * @param formCode The form code that we are looking up the nexus for
      * @param include 
@@ -14042,7 +14543,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("formCode", formCode);
         path.addQuery("$include", include);
-        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){})).call();
+        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -14065,6 +14566,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this nexus object
      * @param formCode The form code that we are looking up the nexus for
      * @param include 
@@ -14075,7 +14577,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("formCode", formCode);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){}));
+        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"21.10.0"));
     }
 
     /**
@@ -14092,6 +14594,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param nexusId The nexus id
      * @param id The parameter id
@@ -14102,7 +14605,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){})).call();
+        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -14119,6 +14622,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param nexusId The nexus id
      * @param id The parameter id
@@ -14129,7 +14633,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){}));
+        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){},"21.10.0"));
     }
 
     /**
@@ -14151,6 +14655,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these nexus objects
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
      * @param include A comma separated list of additional data to retrieve.
@@ -14167,7 +14672,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -14189,6 +14694,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these nexus objects
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
      * @param include A comma separated list of additional data to retrieve.
@@ -14205,7 +14711,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -14227,6 +14733,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these nexus objects
      * @param taxTypeGroup Name of TaxTypeGroup to filter by
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
@@ -14245,7 +14752,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -14267,6 +14774,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these nexus objects
      * @param taxTypeGroup Name of TaxTypeGroup to filter by
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
@@ -14285,7 +14793,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -14305,6 +14813,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param nexusId The nexus id
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
@@ -14321,7 +14830,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){})).call();
+        return ((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -14341,6 +14850,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id
      * @param nexusId The nexus id
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
@@ -14357,7 +14867,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){},"21.10.0"));
     }
 
     /**
@@ -14379,6 +14889,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -14393,7 +14904,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -14415,6 +14926,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -14429,7 +14941,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"21.10.0"));
     }
 
     /**
@@ -14459,6 +14971,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this nexus belongs to.
      * @param id The ID of the nexus you wish to update
      * @param model The nexus object you wish to update.
@@ -14468,7 +14981,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){})).call();
+        return ((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -14498,6 +15011,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this nexus belongs to.
      * @param id The ID of the nexus you wish to update
      * @param model The nexus object you wish to update.
@@ -14507,7 +15021,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){}));
+        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){},"21.10.0"));
     }
 
     /**
@@ -14525,6 +15039,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param nexusId The nexus id
      * @param id The nexus parameter id
@@ -14536,7 +15051,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){})).call();
+        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -14554,6 +15069,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The company id.
      * @param nexusId The nexus id
      * @param id The nexus parameter id
@@ -14565,7 +15081,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){}));
+        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){},"21.10.0"));
     }
 
     /**
@@ -14578,12 +15094,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The responsibility type to create
      * @return NoticeResponsibilityModel
      */
     public NoticeResponsibilityModel createNoticeResponsibilityType(CreateNoticeResponsibilityTypeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities");
-        return ((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){})).call();
+        return ((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -14596,12 +15113,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The responsibility type to create
      * @return NoticeResponsibilityModel
      */
     public Future<NoticeResponsibilityModel> createNoticeResponsibilityTypeAsync(CreateNoticeResponsibilityTypeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities");
-        return this.threadPool.submit((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){}));
+        return this.threadPool.submit((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){},"21.10.0"));
     }
 
     /**
@@ -14614,12 +15132,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The root cause type to create
      * @return NoticeRootCauseModel
      */
     public NoticeRootCauseModel createNoticeRootCauseType(CreateNoticeRootCauseTypeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses");
-        return ((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){})).call();
+        return ((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -14632,12 +15151,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The root cause type to create
      * @return NoticeRootCauseModel
      */
     public Future<NoticeRootCauseModel> createNoticeRootCauseTypeAsync(CreateNoticeRootCauseTypeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses");
-        return this.threadPool.submit((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){}));
+        return this.threadPool.submit((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){},"21.10.0"));
     }
 
     /**
@@ -14649,13 +15169,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param responsibilityId The unique ID of the responsibility type
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteNoticeResponsibilityType(Integer responsibilityId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities/{responsibilityId}");
         path.applyField("responsibilityId", responsibilityId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -14667,13 +15188,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param responsibilityId The unique ID of the responsibility type
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteNoticeResponsibilityTypeAsync(Integer responsibilityId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities/{responsibilityId}");
         path.applyField("responsibilityId", responsibilityId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -14685,13 +15207,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param rootCauseId The unique ID of the root cause type
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteNoticeRootCauseType(Integer rootCauseId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses/{rootCauseId}");
         path.applyField("rootCauseId", rootCauseId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -14703,13 +15226,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param rootCauseId The unique ID of the root cause type
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteNoticeRootCauseTypeAsync(Integer rootCauseId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses/{rootCauseId}");
         path.applyField("rootCauseId", rootCauseId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -14734,13 +15258,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The id of the notification you wish to mark as dismissed.
      * @return NotificationModel
      */
     public NotificationModel dismissNotification(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}/dismiss");
         path.applyField("id", id);
-        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){})).call();
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -14765,13 +15290,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The id of the notification you wish to mark as dismissed.
      * @return NotificationModel
      */
     public Future<NotificationModel> dismissNotificationAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}/dismiss");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){}));
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){},"21.10.0"));
     }
 
     /**
@@ -14790,13 +15316,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The id of the notification to retrieve.
      * @return NotificationModel
      */
     public NotificationModel getNotification(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){})).call();
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -14815,13 +15342,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The id of the notification to retrieve.
      * @return NotificationModel
      */
     public Future<NotificationModel> getNotificationAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){}));
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){},"21.10.0"));
     }
 
     /**
@@ -14843,6 +15371,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -14855,7 +15384,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){})).call();
+        return ((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -14877,6 +15406,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -14889,7 +15419,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -14916,12 +15446,13 @@ public class AvaTaxClient {
      * * This API is available by invitation only.
      * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [Provisioning:RequestNewAccount].
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Information about the account you wish to create and the selected product offerings.
      * @return NewAccountModel
      */
     public NewAccountModel requestNewAccount(NewAccountRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/request");
-        return ((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){})).call();
+        return ((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -14948,12 +15479,13 @@ public class AvaTaxClient {
      * * This API is available by invitation only.
      * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [Provisioning:RequestNewAccount].
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Information about the account you wish to create and the selected product offerings.
      * @return NewAccountModel
      */
     public Future<NewAccountModel> requestNewAccountAsync(NewAccountRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/request");
-        return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){}));
+        return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"21.10.0"));
     }
 
     /**
@@ -14968,6 +15500,7 @@ public class AvaTaxClient {
      * * This API is available by invitation only.
      * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [Provisioning:RequestNewAccount].
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The avatax account id of the customer
      * @param offer The offer to be added to an already existing customer
      * @return OfferModel
@@ -14976,7 +15509,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/entitlements/{offer}");
         path.applyField("id", id);
         path.applyField("offer", offer);
-        return ((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){})).call();
+        return ((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -14991,6 +15524,7 @@ public class AvaTaxClient {
      * * This API is available by invitation only.
      * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [Provisioning:RequestNewAccount].
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The avatax account id of the customer
      * @param offer The offer to be added to an already existing customer
      * @return OfferModel
@@ -14999,7 +15533,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/entitlements/{offer}");
         path.applyField("id", id);
         path.applyField("offer", offer);
-        return this.threadPool.submit((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){}));
+        return this.threadPool.submit((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){},"21.10.0"));
     }
 
     /**
@@ -15015,12 +15549,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The account you wish to create.
      * @return ArrayList<AccountModel>
      */
     public ArrayList<AccountModel> createAccount(AccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        return ((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){})).call();
+        return ((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -15036,12 +15571,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The account you wish to create.
      * @return ArrayList<AccountModel>
      */
     public Future<ArrayList<AccountModel>> createAccountAsync(AccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        return this.threadPool.submit((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){},"21.10.0"));
     }
 
     /**
@@ -15066,12 +15602,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The notifications you wish to create.
      * @return ArrayList<NotificationModel>
      */
     public ArrayList<NotificationModel> createNotifications(ArrayList<NotificationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
-        return ((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){})).call();
+        return ((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -15096,12 +15633,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
+     * Swagger Name: AvaTaxClient
      * @param model The notifications you wish to create.
      * @return ArrayList<NotificationModel>
      */
     public Future<ArrayList<NotificationModel>> createNotificationsAsync(ArrayList<NotificationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
-        return this.threadPool.submit((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){},"21.10.0"));
     }
 
     /**
@@ -15117,6 +15655,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this subscription.
      * @param model The subscription you wish to create.
      * @return ArrayList<SubscriptionModel>
@@ -15124,7 +15663,7 @@ public class AvaTaxClient {
     public ArrayList<SubscriptionModel> createSubscriptions(Integer accountId, ArrayList<SubscriptionModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){})).call();
+        return ((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -15140,6 +15679,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this subscription.
      * @param model The subscription you wish to create.
      * @return ArrayList<SubscriptionModel>
@@ -15147,7 +15687,7 @@ public class AvaTaxClient {
     public Future<ArrayList<SubscriptionModel>> createSubscriptionsAsync(Integer accountId, ArrayList<SubscriptionModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){},"21.10.0"));
     }
 
     /**
@@ -15163,13 +15703,14 @@ public class AvaTaxClient {
      * 
      * * This API requires the user role SystemAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteAccount(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -15185,13 +15726,14 @@ public class AvaTaxClient {
      * 
      * * This API requires the user role SystemAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteAccountAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -15213,13 +15755,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The id of the notification you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteNotification(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -15241,13 +15784,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The id of the notification you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteNotificationAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -15262,6 +15806,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this subscription.
      * @param id The ID of the subscription you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -15270,7 +15815,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -15285,6 +15830,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this subscription.
      * @param id The ID of the subscription you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -15293,7 +15839,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -15305,13 +15851,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param writeMode  (See TssAccountMigrationId::* for a list of allowable values)
      * @return AccountMigrationStatusModel
      */
     public AccountMigrationStatusModel listAccountsByTssWriteMode(TssAccountMigrationId writeMode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/ListAccountsByTssWriteMode/{writeMode}");
         path.applyField("writeMode", writeMode);
-        return ((RestCall<AccountMigrationStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountMigrationStatusModel>(){})).call();
+        return ((RestCall<AccountMigrationStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountMigrationStatusModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -15323,13 +15870,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param writeMode  (See TssAccountMigrationId::* for a list of allowable values)
      * @return AccountMigrationStatusModel
      */
     public Future<AccountMigrationStatusModel> listAccountsByTssWriteModeAsync(TssAccountMigrationId writeMode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/ListAccountsByTssWriteMode/{writeMode}");
         path.applyField("writeMode", writeMode);
-        return this.threadPool.submit((RestCall<AccountMigrationStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountMigrationStatusModel>(){}));
+        return this.threadPool.submit((RestCall<AccountMigrationStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountMigrationStatusModel>(){},"21.10.0"));
     }
 
     /**
@@ -15347,6 +15895,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API is available to Avalara system-level (registrar-level) users only.
      * 
+     * Swagger Name: AvaTaxClient
      * @param userId The unique ID of the user whose password will be changed
      * @param unmigrateFromAi If user's password was migrated to AI, undo this.
      * @param model The new password for this user
@@ -15356,7 +15905,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.applyField("userId", userId);
         path.addQuery("unmigrateFromAi", unmigrateFromAi);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -15374,6 +15923,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API is available to Avalara system-level (registrar-level) users only.
      * 
+     * Swagger Name: AvaTaxClient
      * @param userId The unique ID of the user whose password will be changed
      * @param unmigrateFromAi If user's password was migrated to AI, undo this.
      * @param model The new password for this user
@@ -15383,7 +15933,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.applyField("userId", userId);
         path.addQuery("unmigrateFromAi", unmigrateFromAi);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -15398,6 +15948,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to update.
      * @param model The account object you wish to update.
      * @return AccountModel
@@ -15405,7 +15956,7 @@ public class AvaTaxClient {
     public AccountModel updateAccount(Integer id, AccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return ((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){})).call();
+        return ((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -15420,6 +15971,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to update.
      * @param model The account object you wish to update.
      * @return AccountModel
@@ -15427,7 +15979,7 @@ public class AvaTaxClient {
     public Future<AccountModel> updateAccountAsync(Integer id, AccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){}));
+        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){},"21.10.0"));
     }
 
     /**
@@ -15449,6 +16001,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The id of the notification you wish to update.
      * @param model The notification object you wish to update.
      * @return NotificationModel
@@ -15456,7 +16009,7 @@ public class AvaTaxClient {
     public NotificationModel updateNotification(Long id, NotificationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){})).call();
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -15478,6 +16031,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The id of the notification you wish to update.
      * @param model The notification object you wish to update.
      * @return NotificationModel
@@ -15485,7 +16039,7 @@ public class AvaTaxClient {
     public Future<NotificationModel> updateNotificationAsync(Long id, NotificationModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){}));
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){},"21.10.0"));
     }
 
     /**
@@ -15504,6 +16058,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that this subscription belongs to.
      * @param id The ID of the subscription you wish to update
      * @param model The subscription you wish to update.
@@ -15513,7 +16068,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){})).call();
+        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -15532,6 +16087,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that this subscription belongs to.
      * @param id The ID of the subscription you wish to update
      * @param model The subscription you wish to update.
@@ -15541,7 +16097,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){}));
+        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){},"21.10.0"));
     }
 
     /**
@@ -15566,13 +16122,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of this report
      * @return String
      */
     public String downloadReport(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}/attachment");
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -15597,13 +16154,14 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of this report
      * @return String
      */
     public Future<String> downloadReportAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}/attachment");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -15620,13 +16178,14 @@ public class AvaTaxClient {
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of the report to retrieve
      * @return ReportModel
      */
     public ReportModel getReport(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}");
         path.applyField("id", id);
-        return ((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){})).call();
+        return ((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -15643,13 +16202,14 @@ public class AvaTaxClient {
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
      *             
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of the report to retrieve
      * @return ReportModel
      */
     public Future<ReportModel> getReportAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){}));
+        return this.threadPool.submit((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){},"21.10.0"));
     }
 
     /**
@@ -15680,6 +16240,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company to report on.
      * @param model Options that may be configured to customize the report.
      * @return ArrayList<ReportModel>
@@ -15687,7 +16248,7 @@ public class AvaTaxClient {
     public ArrayList<ReportModel> initiateExportDocumentLineReport(Integer companyId, ExportDocumentLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){})).call();
+        return ((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -15718,6 +16279,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The unique ID number of the company to report on.
      * @param model Options that may be configured to customize the report.
      * @return ArrayList<ReportModel>
@@ -15725,7 +16287,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ReportModel>> initiateExportDocumentLineReportAsync(Integer companyId, ExportDocumentLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){},"21.10.0"));
     }
 
     /**
@@ -15747,6 +16309,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The id of the company for which to get reports.
      * @param pageKey Provide a page key to retrieve the next page of results.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -15759,7 +16322,7 @@ public class AvaTaxClient {
         path.addQuery("pageKey", pageKey);
         path.addQuery("$skip", skip);
         path.addQuery("$top", top);
-        return ((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){})).call();
+        return ((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -15781,6 +16344,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The id of the company for which to get reports.
      * @param pageKey Provide a page key to retrieve the next page of results.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -15793,7 +16357,7 @@ public class AvaTaxClient {
         path.addQuery("pageKey", pageKey);
         path.addQuery("$skip", skip);
         path.addQuery("$top", top);
-        return this.threadPool.submit((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){},"21.10.0"));
     }
 
     /**
@@ -15819,6 +16383,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this setting.
      * @param model The setting you wish to create.
      * @return ArrayList<SettingModel>
@@ -15826,7 +16391,7 @@ public class AvaTaxClient {
     public ArrayList<SettingModel> createSettings(Integer companyId, ArrayList<SettingModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){})).call();
+        return ((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -15852,6 +16417,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this setting.
      * @param model The setting you wish to create.
      * @return ArrayList<SettingModel>
@@ -15859,7 +16425,7 @@ public class AvaTaxClient {
     public Future<ArrayList<SettingModel>> createSettingsAsync(Integer companyId, ArrayList<SettingModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){},"21.10.0"));
     }
 
     /**
@@ -15880,6 +16446,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this setting.
      * @param id The ID of the setting you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -15888,7 +16455,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -15909,6 +16476,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this setting.
      * @param id The ID of the setting you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -15917,7 +16485,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -15938,6 +16506,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this setting
      * @param id The primary key of this setting
      * @return SettingModel
@@ -15946,7 +16515,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){})).call();
+        return ((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -15967,6 +16536,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this setting
      * @param id The primary key of this setting
      * @return SettingModel
@@ -15975,7 +16545,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){}));
+        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){},"21.10.0"));
     }
 
     /**
@@ -15999,6 +16569,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these settings
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
      * @param include A comma separated list of additional data to retrieve.
@@ -16015,7 +16586,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){})).call();
+        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -16039,6 +16610,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these settings
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
      * @param include A comma separated list of additional data to retrieve.
@@ -16055,7 +16627,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"21.10.0"));
     }
 
     /**
@@ -16079,6 +16651,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -16093,7 +16666,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){})).call();
+        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -16117,6 +16690,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -16131,7 +16705,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"21.10.0"));
     }
 
     /**
@@ -16156,6 +16730,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this setting belongs to.
      * @param id The ID of the setting you wish to update
      * @param model The setting you wish to update.
@@ -16165,7 +16740,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){})).call();
+        return ((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -16190,6 +16765,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this setting belongs to.
      * @param id The ID of the setting you wish to update
      * @param model The setting you wish to update.
@@ -16199,7 +16775,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){}));
+        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){},"21.10.0"));
     }
 
     /**
@@ -16213,6 +16789,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this subscription
      * @param id The primary key of this subscription
      * @return SubscriptionModel
@@ -16221,7 +16798,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){})).call();
+        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -16235,6 +16812,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns this subscription
      * @param id The primary key of this subscription
      * @return SubscriptionModel
@@ -16243,7 +16821,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){}));
+        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"21.10.0"));
     }
 
     /**
@@ -16260,6 +16838,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns these subscriptions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionDescription
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -16274,7 +16853,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -16291,6 +16870,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The ID of the account that owns these subscriptions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionDescription
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -16305,7 +16885,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"21.10.0"));
     }
 
     /**
@@ -16322,6 +16902,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionDescription
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -16334,7 +16915,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -16351,6 +16932,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionDescription
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -16363,7 +16945,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"21.10.0"));
     }
 
     /**
@@ -16379,6 +16961,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax code.
      * @param model The tax code you wish to create.
      * @return ArrayList<TaxCodeModel>
@@ -16386,7 +16969,7 @@ public class AvaTaxClient {
     public ArrayList<TaxCodeModel> createTaxCodes(Integer companyId, ArrayList<TaxCodeModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){})).call();
+        return ((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -16402,6 +16985,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax code.
      * @param model The tax code you wish to create.
      * @return ArrayList<TaxCodeModel>
@@ -16409,7 +16993,7 @@ public class AvaTaxClient {
     public Future<ArrayList<TaxCodeModel>> createTaxCodesAsync(Integer companyId, ArrayList<TaxCodeModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -16421,6 +17005,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax code.
      * @param id The ID of the tax code you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -16429,7 +17014,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -16441,6 +17026,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax code.
      * @param id The ID of the tax code you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -16449,7 +17035,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -16465,6 +17051,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax code
      * @param id The primary key of this tax code
      * @return TaxCodeModel
@@ -16473,7 +17060,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){})).call();
+        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -16489,6 +17076,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax code
      * @param id The primary key of this tax code
      * @return TaxCodeModel
@@ -16497,7 +17085,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){}));
+        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){},"21.10.0"));
     }
 
     /**
@@ -16516,6 +17104,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these tax codes
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -16532,7 +17121,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -16551,6 +17140,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these tax codes
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -16567,7 +17157,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -16586,6 +17176,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -16600,7 +17191,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -16619,6 +17210,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -16633,7 +17225,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"21.10.0"));
     }
 
     /**
@@ -16651,6 +17243,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this tax code belongs to.
      * @param id The ID of the tax code you wish to update
      * @param model The tax code you wish to update.
@@ -16660,7 +17253,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){})).call();
+        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -16678,6 +17271,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this tax code belongs to.
      * @param id The ID of the tax code you wish to update
      * @param model The tax code you wish to update.
@@ -16687,7 +17281,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){}));
+        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){},"21.10.0"));
     }
 
     /**
@@ -16722,12 +17316,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
      * @return String
      */
     public String buildTaxContentFile(PointOfSaleDataRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -16762,12 +17357,13 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
      * @return String
      */
     public Future<String> buildTaxContentFileAsync(PointOfSaleDataRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -16802,6 +17398,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID number of the company that owns this location.
      * @param id The ID number of the location to retrieve point-of-sale data.
      * @param date The date for which point-of-sale data would be calculated (today by default)
@@ -16818,7 +17415,7 @@ public class AvaTaxClient {
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -16853,6 +17450,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID number of the company that owns this location.
      * @param id The ID number of the location to retrieve point-of-sale data.
      * @param date The date for which point-of-sale data would be calculated (today by default)
@@ -16869,7 +17467,7 @@ public class AvaTaxClient {
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -16920,6 +17518,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
      * @param region A two character region code which limits results to a specific region.
      * @return String
@@ -16928,7 +17527,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
         path.addQuery("region", region);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -16979,6 +17578,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
      * @param region A two character region code which limits results to a specific region.
      * @return String
@@ -16987,7 +17587,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
         path.addQuery("region", region);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -17013,6 +17613,7 @@ public class AvaTaxClient {
      *             
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
+     * Swagger Name: AvaTaxClient
      * @param line1 The street address of the location.
      * @param line2 The street address of the location.
      * @param line3 The street address of the location.
@@ -17031,7 +17632,7 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
-        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){})).call();
+        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -17057,6 +17658,7 @@ public class AvaTaxClient {
      *             
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
+     * Swagger Name: AvaTaxClient
      * @param line1 The street address of the location.
      * @param line2 The street address of the location.
      * @param line3 The street address of the location.
@@ -17075,7 +17677,7 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
-        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){}));
+        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"21.10.0"));
     }
 
     /**
@@ -17103,6 +17705,7 @@ public class AvaTaxClient {
      *             
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
+     * Swagger Name: AvaTaxClient
      * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      * @param postalCode The postal code of the location.
      * @return TaxRateModel
@@ -17111,7 +17714,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
         path.addQuery("country", country);
         path.addQuery("postalCode", postalCode);
-        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){})).call();
+        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -17139,6 +17742,7 @@ public class AvaTaxClient {
      *             
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
+     * Swagger Name: AvaTaxClient
      * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      * @param postalCode The postal code of the location.
      * @return TaxRateModel
@@ -17147,7 +17751,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
         path.addQuery("country", country);
         path.addQuery("postalCode", postalCode);
-        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){}));
+        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"21.10.0"));
     }
 
     /**
@@ -17171,6 +17775,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax rule.
      * @param model The tax rule you wish to create.
      * @return ArrayList<TaxRuleModel>
@@ -17178,7 +17783,7 @@ public class AvaTaxClient {
     public ArrayList<TaxRuleModel> createTaxRules(Integer companyId, ArrayList<TaxRuleModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){})).call();
+        return ((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -17202,6 +17807,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax rule.
      * @param model The tax rule you wish to create.
      * @return ArrayList<TaxRuleModel>
@@ -17209,7 +17815,7 @@ public class AvaTaxClient {
     public Future<ArrayList<TaxRuleModel>> createTaxRulesAsync(Integer companyId, ArrayList<TaxRuleModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){},"21.10.0"));
     }
 
     /**
@@ -17233,6 +17839,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax rule.
      * @param id The ID of the tax rule you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -17241,7 +17848,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -17265,6 +17872,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax rule.
      * @param id The ID of the tax rule you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -17273,7 +17881,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -17297,6 +17905,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax rule
      * @param id The primary key of this tax rule
      * @return TaxRuleModel
@@ -17305,7 +17914,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){})).call();
+        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -17329,6 +17938,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax rule
      * @param id The primary key of this tax rule
      * @return TaxRuleModel
@@ -17337,7 +17947,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){}));
+        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){},"21.10.0"));
     }
 
     /**
@@ -17364,6 +17974,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these tax rules
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, taxTypeCode, taxRuleProductDetail, rateTypeCode, taxTypeGroup, taxSubType, unitOfBasis
      * @param include A comma separated list of additional data to retrieve.
@@ -17380,7 +17991,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -17407,6 +18018,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these tax rules
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, taxTypeCode, taxRuleProductDetail, rateTypeCode, taxTypeGroup, taxSubType, unitOfBasis
      * @param include A comma separated list of additional data to retrieve.
@@ -17423,7 +18035,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"21.10.0"));
     }
 
     /**
@@ -17450,6 +18062,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, taxTypeCode, taxRuleProductDetail, rateTypeCode, taxTypeGroup, taxSubType, unitOfBasis
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -17464,7 +18077,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){})).call();
+        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -17491,6 +18104,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, taxTypeCode, taxRuleProductDetail, rateTypeCode, taxTypeGroup, taxSubType, unitOfBasis
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -17505,7 +18119,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"21.10.0"));
     }
 
     /**
@@ -17529,6 +18143,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this tax rule belongs to.
      * @param id The ID of the tax rule you wish to update
      * @param model The tax rule you wish to update.
@@ -17538,7 +18153,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){})).call();
+        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -17562,6 +18177,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this tax rule belongs to.
      * @param id The ID of the tax rule you wish to update
      * @param model The tax rule you wish to update.
@@ -17571,7 +18187,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){}));
+        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){},"21.10.0"));
     }
 
     /**
@@ -17603,6 +18219,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be added
      * @return TransactionModel
@@ -17610,7 +18227,7 @@ public class AvaTaxClient {
     public TransactionModel addLines(String include, AddTransactionLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/add");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -17642,6 +18259,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be added
      * @return TransactionModel
@@ -17649,7 +18267,7 @@ public class AvaTaxClient {
     public Future<TransactionModel> addLinesAsync(String include, AddTransactionLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/add");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -17690,6 +18308,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to adjust
      * @param documentType (Optional): The document type of the transaction to adjust. (See DocumentType::* for a list of allowable values)
@@ -17703,7 +18322,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -17744,6 +18363,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to adjust
      * @param documentType (Optional): The document type of the transaction to adjust. (See DocumentType::* for a list of allowable values)
@@ -17757,7 +18377,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -17792,6 +18412,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
      * @return AuditTransactionModel
@@ -17800,7 +18421,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/audit");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
-        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){})).call();
+        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -17835,6 +18456,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
      * @return AuditTransactionModel
@@ -17843,7 +18465,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/audit");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
-        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){}));
+        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -17878,6 +18500,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
      * @param documentType The document type of the original transaction (See DocumentType::* for a list of allowable values)
@@ -17888,7 +18511,7 @@ public class AvaTaxClient {
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
-        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){})).call();
+        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -17923,6 +18546,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
      * @param documentType The document type of the original transaction (See DocumentType::* for a list of allowable values)
@@ -17933,7 +18557,7 @@ public class AvaTaxClient {
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
-        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){}));
+        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -17952,12 +18576,13 @@ public class AvaTaxClient {
      * * This API requires the user role Compliance Root User.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model bulk lock request
      * @return BulkLockTransactionResult
      */
     public BulkLockTransactionResult bulkLockTransaction(BulkLockTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/lock");
-        return ((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){})).call();
+        return ((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){},"21.10.0")).call();
     }
 
     /**
@@ -17976,12 +18601,13 @@ public class AvaTaxClient {
      * * This API requires the user role Compliance Root User.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model bulk lock request
      * @return BulkLockTransactionResult
      */
     public Future<BulkLockTransactionResult> bulkLockTransactionAsync(BulkLockTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/lock");
-        return this.threadPool.submit((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){}));
+        return this.threadPool.submit((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){},"21.10.0"));
     }
 
     /**
@@ -18022,6 +18648,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to change
      * @param documentType (Optional): The document type of the transaction to change document code. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -18035,7 +18662,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -18076,6 +18703,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to change
      * @param documentType (Optional): The document type of the transaction to change document code. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -18089,7 +18717,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -18128,6 +18756,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
      * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -18141,7 +18770,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -18180,6 +18809,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
      * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -18193,7 +18823,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -18238,6 +18868,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create or adjust
      * @return TransactionModel
@@ -18245,7 +18876,7 @@ public class AvaTaxClient {
     public TransactionModel createOrAdjustTransaction(String include, CreateOrAdjustTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/createoradjust");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -18290,6 +18921,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create or adjust
      * @return TransactionModel
@@ -18297,7 +18929,7 @@ public class AvaTaxClient {
     public Future<TransactionModel> createOrAdjustTransactionAsync(String include, CreateOrAdjustTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/createoradjust");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -18349,6 +18981,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create
      * @return TransactionModel
@@ -18356,7 +18989,7 @@ public class AvaTaxClient {
     public TransactionModel createTransaction(String include, CreateTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -18408,6 +19041,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create
      * @return TransactionModel
@@ -18415,7 +19049,7 @@ public class AvaTaxClient {
     public Future<TransactionModel> createTransactionAsync(String include, CreateTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -18444,6 +19078,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be removed
      * @return TransactionModel
@@ -18451,7 +19086,7 @@ public class AvaTaxClient {
     public TransactionModel deleteLines(String include, RemoveTransactionLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/delete");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -18480,6 +19115,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be removed
      * @return TransactionModel
@@ -18487,7 +19123,7 @@ public class AvaTaxClient {
     public Future<TransactionModel> deleteLinesAsync(String include, RemoveTransactionLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/delete");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -18525,6 +19161,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
      * @param documentType (Optional): The document type of the transaction to retrieve (See DocumentType::* for a list of allowable values)
@@ -18537,7 +19174,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -18575,6 +19212,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
      * @param documentType (Optional): The document type of the transaction to retrieve (See DocumentType::* for a list of allowable values)
@@ -18587,7 +19225,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -18608,6 +19246,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
      * @param documentType The transaction type to retrieve (See DocumentType::* for a list of allowable values)
@@ -18620,7 +19259,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -18641,6 +19280,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
      * @param documentType The transaction type to retrieve (See DocumentType::* for a list of allowable values)
@@ -18653,7 +19293,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -18682,6 +19322,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of the transaction to retrieve
      * @param include Specifies objects to include in this fetch call
      * @return TransactionModel
@@ -18690,7 +19331,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -18719,6 +19360,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The unique ID number of the transaction to retrieve
      * @param include Specifies objects to include in this fetch call
      * @return TransactionModel
@@ -18727,7 +19369,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -18768,6 +19410,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param dataSourceId Optionally filter transactions to those from a specific data source.
      * @param include Specifies objects to include in this fetch call
@@ -18786,7 +19429,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){})).call();
+        return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -18827,6 +19470,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param dataSourceId Optionally filter transactions to those from a specific data source.
      * @param include Specifies objects to include in this fetch call
@@ -18845,7 +19489,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){},"21.10.0"));
     }
 
     /**
@@ -18886,6 +19530,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to lock
      * @param documentType (Optional): The document type of the transaction to lock. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -18899,7 +19544,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -18940,6 +19585,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to lock
      * @param documentType (Optional): The document type of the transaction to lock. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -18953,7 +19599,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -19004,6 +19650,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The code of the company that made the original sale
      * @param transactionCode The transaction code of the original sale
      * @param include Specifies objects to include in the response after transaction is created
@@ -19019,7 +19666,7 @@ public class AvaTaxClient {
         path.addQuery("$include", include);
         path.addQuery("documentType", documentType);
         path.addQuery("useTaxDateOverride", useTaxDateOverride);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -19070,6 +19717,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The code of the company that made the original sale
      * @param transactionCode The transaction code of the original sale
      * @param include Specifies objects to include in the response after transaction is created
@@ -19085,7 +19733,7 @@ public class AvaTaxClient {
         path.addQuery("$include", include);
         path.addQuery("documentType", documentType);
         path.addQuery("useTaxDateOverride", useTaxDateOverride);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -19124,6 +19772,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
      * @param documentType (Optional): The document type of the transaction to settle. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -19137,7 +19786,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -19176,6 +19825,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
      * @param documentType (Optional): The document type of the transaction to settle. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -19189,7 +19839,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -19223,6 +19873,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to Uncommit
      * @param documentType (Optional): The document type of the transaction to Uncommit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -19235,7 +19886,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -19269,6 +19920,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to Uncommit
      * @param documentType (Optional): The document type of the transaction to Uncommit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -19281,7 +19933,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -19312,6 +19964,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
      * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -19324,7 +19977,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -19355,6 +20008,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
      * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -19367,7 +20021,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -19405,6 +20059,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
      * @param documentType (Optional): The document type of the transaction to verify. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -19418,7 +20073,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -19456,6 +20111,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
      * @param documentType (Optional): The document type of the transaction to verify. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -19469,7 +20125,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -19509,6 +20165,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
      * @param documentType (Optional): The document type of the transaction to void. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -19522,7 +20179,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -19562,6 +20219,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
      * @param documentType (Optional): The document type of the transaction to void. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
@@ -19575,7 +20233,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"21.10.0"));
     }
 
     /**
@@ -19589,6 +20247,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this UPC.
      * @param model The UPC you wish to create.
      * @return ArrayList<UPCModel>
@@ -19596,7 +20255,7 @@ public class AvaTaxClient {
     public ArrayList<UPCModel> createUPCs(Integer companyId, ArrayList<UPCModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){})).call();
+        return ((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -19610,6 +20269,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this UPC.
      * @param model The UPC you wish to create.
      * @return ArrayList<UPCModel>
@@ -19617,7 +20277,7 @@ public class AvaTaxClient {
     public Future<ArrayList<UPCModel>> createUPCsAsync(Integer companyId, ArrayList<UPCModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){},"21.10.0"));
     }
 
     /**
@@ -19630,6 +20290,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this UPC.
      * @param id The ID of the UPC you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -19638,7 +20299,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -19651,6 +20312,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this UPC.
      * @param id The ID of the UPC you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -19659,7 +20321,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -19673,6 +20335,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this UPC
      * @param id The primary key of this UPC
      * @return UPCModel
@@ -19681,7 +20344,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){})).call();
+        return ((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -19695,6 +20358,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this UPC
      * @param id The primary key of this UPC
      * @return UPCModel
@@ -19703,7 +20367,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){}));
+        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){},"21.10.0"));
     }
 
     /**
@@ -19720,6 +20384,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these UPCs
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -19736,7 +20401,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){})).call();
+        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -19753,6 +20418,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these UPCs
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -19769,7 +20435,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"21.10.0"));
     }
 
     /**
@@ -19786,6 +20452,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -19800,7 +20467,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){})).call();
+        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -19817,6 +20484,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -19831,7 +20499,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"21.10.0"));
     }
 
     /**
@@ -19847,6 +20515,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this UPC belongs to.
      * @param id The ID of the UPC you wish to update
      * @param model The UPC you wish to update.
@@ -19856,7 +20525,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){})).call();
+        return ((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -19872,6 +20541,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
+     * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that this UPC belongs to.
      * @param id The ID of the UPC you wish to update
      * @param model The UPC you wish to update.
@@ -19881,7 +20551,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){}));
+        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){},"21.10.0"));
     }
 
     /**
@@ -19899,12 +20569,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model An object containing your current password and the new password.
      * @return String
      */
     public String changePassword(PasswordChangeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
-        return ((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){},"21.10.0")).call();
     }
 
     /**
@@ -19922,12 +20593,13 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param model An object containing your current password and the new password.
      * @return String
      */
     public Future<String> changePasswordAsync(PasswordChangeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){},"21.10.0"));
     }
 
     /**
@@ -19947,6 +20619,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The unique ID number of the account where these users will be created.
      * @param model The user or array of users you wish to create.
      * @return ArrayList<UserModel>
@@ -19954,7 +20627,7 @@ public class AvaTaxClient {
     public ArrayList<UserModel> createUsers(Integer accountId, ArrayList<UserModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){})).call();
+        return ((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -19974,6 +20647,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The unique ID number of the account where these users will be created.
      * @param model The user or array of users you wish to create.
      * @return ArrayList<UserModel>
@@ -19981,7 +20655,7 @@ public class AvaTaxClient {
     public Future<ArrayList<UserModel>> createUsersAsync(Integer accountId, ArrayList<UserModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){},"21.10.0"));
     }
 
     /**
@@ -19998,6 +20672,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, CSPTester, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TreasuryAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the user you wish to delete.
      * @param accountId The accountID of the user you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -20006,7 +20681,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0")).call();
     }
 
     /**
@@ -20023,6 +20698,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, CSPTester, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TreasuryAdmin.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the user you wish to delete.
      * @param accountId The accountID of the user you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -20031,7 +20707,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"21.10.0"));
     }
 
     /**
@@ -20048,6 +20724,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the user to retrieve.
      * @param accountId The accountID of the user you wish to get.
      * @param include Optional fetch commands.
@@ -20058,7 +20735,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
-        return ((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){})).call();
+        return ((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -20075,6 +20752,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the user to retrieve.
      * @param accountId The accountID of the user you wish to get.
      * @param include Optional fetch commands.
@@ -20085,7 +20763,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){}));
+        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){},"21.10.0"));
     }
 
     /**
@@ -20111,6 +20789,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the user to retrieve.
      * @param accountId The accountID of the user you wish to get.
      * @return UserEntitlementModel
@@ -20119,7 +20798,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return ((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){})).call();
+        return ((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -20145,6 +20824,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the user to retrieve.
      * @param accountId The accountID of the user you wish to get.
      * @return UserEntitlementModel
@@ -20153,7 +20833,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){}));
+        return this.threadPool.submit((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){},"21.10.0"));
     }
 
     /**
@@ -20176,6 +20856,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The accountID of the user you wish to list.
      * @param include Optional fetch commands.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* SuppressNewUserEmail
@@ -20192,7 +20873,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){})).call();
+        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -20215,6 +20896,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param accountId The accountID of the user you wish to list.
      * @param include Optional fetch commands.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* SuppressNewUserEmail
@@ -20231,7 +20913,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"21.10.0"));
     }
 
     /**
@@ -20256,6 +20938,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Optional fetch commands.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* SuppressNewUserEmail
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -20270,7 +20953,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){})).call();
+        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -20295,6 +20978,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param include Optional fetch commands.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* SuppressNewUserEmail
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -20309,7 +20993,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"21.10.0"));
     }
 
     /**
@@ -20324,6 +21008,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the user you wish to update.
      * @param accountId The accountID of the user you wish to update.
      * @param model The user object you wish to update.
@@ -20333,7 +21018,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return ((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){})).call();
+        return ((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -20348,6 +21033,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
+     * Swagger Name: AvaTaxClient
      * @param id The ID of the user you wish to update.
      * @param accountId The accountID of the user you wish to update.
      * @param model The user object you wish to update.
@@ -20357,7 +21043,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){}));
+        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){},"21.10.0"));
     }
 
     /**
@@ -20371,13 +21057,14 @@ public class AvaTaxClient {
      * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
      * or subscription to provide useful information to the current user as to whether they are entitled to use
      * 
+     * Swagger Name: AvaTaxClient
      * @param serviceTypeId The service to check
      * @return SubscriptionModel
      */
     public SubscriptionModel getMySubscription(String serviceTypeId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions/{serviceTypeId}");
         path.applyField("serviceTypeId", serviceTypeId);
-        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){})).call();
+        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -20391,13 +21078,14 @@ public class AvaTaxClient {
      * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
      * or subscription to provide useful information to the current user as to whether they are entitled to use
      * 
+     * Swagger Name: AvaTaxClient
      * @param serviceTypeId The service to check
      * @return SubscriptionModel
      */
     public Future<SubscriptionModel> getMySubscriptionAsync(String serviceTypeId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions/{serviceTypeId}");
         path.applyField("serviceTypeId", serviceTypeId);
-        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){}));
+        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"21.10.0"));
     }
 
     /**
@@ -20411,11 +21099,12 @@ public class AvaTaxClient {
      * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
      * or subscription to provide useful information to the current user as to whether they are entitled to use
      * 
+     * Swagger Name: AvaTaxClient
      * @return FetchResult<SubscriptionModel>
      */
     public FetchResult<SubscriptionModel> listMySubscriptions() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"21.10.0")).call();
     }
 
     /**
@@ -20429,11 +21118,12 @@ public class AvaTaxClient {
      * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
      * or subscription to provide useful information to the current user as to whether they are entitled to use
      * 
+     * Swagger Name: AvaTaxClient
      * @return FetchResult<SubscriptionModel>
      */
     public Future<FetchResult<SubscriptionModel>> listMySubscriptionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"21.10.0"));
     }
 
     /**
@@ -20460,11 +21150,12 @@ public class AvaTaxClient {
      * 
      * * This API may be called without providing authentication credentials.
      * 
+     * Swagger Name: AvaTaxClient
      * @return PingResultModel
      */
     public PingResultModel ping() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/ping");
-        return ((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){})).call();
+        return ((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){},"21.10.0")).call();
     }
 
     /**
@@ -20491,11 +21182,268 @@ public class AvaTaxClient {
      * 
      * * This API may be called without providing authentication credentials.
      * 
+     * Swagger Name: AvaTaxClient
      * @return PingResultModel
      */
     public Future<PingResultModel> pingAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/ping");
-        return this.threadPool.submit((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){}));
+        return this.threadPool.submit((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){},"21.10.0"));
+    }
+
+    /**
+     * Determines whether an individual meets or exceeds the minimum legal drinking age.
+     * 
+     * The request must meet the following criteria in order to be evaluated:
+     * * *firstName*, *lastName*, and *address* are required fields.
+     * * One of the following sets of attributes are required for the *address*:
+     *   * *line1, city, region*
+     *   * *line1, postalCode*
+     * 
+     * Optionally, the transaction and its lines may use the following parameters:
+     * * A *DOB* (Date of Birth) field. The value should be ISO-8601 compliant (e.g. 2020-07-21).
+     * * Beyond the required *address* fields above, a *country* field is permitted
+     *   * The valid values for this attribute are [*US, USA*]
+     * 
+     * **Security Policies**
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param simulatedFailureCode (Optional) The failure code included in the simulated response of the endpoint. Note that this endpoint is only available in Sandbox for testing purposes.
+     * @param model Information about the individual whose age is being verified.
+     * @return AgeVerifyResult
+     */
+    public AgeVerifyResult verifyAge(String simulatedFailureCode, AgeVerifyRequest model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/ageverification/verify");
+        path.addQuery("simulatedFailureCode", simulatedFailureCode);
+        return ((RestCall<AgeVerifyResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<AgeVerifyResult>(){},"")).call();
+    }
+
+    /**
+     * Determines whether an individual meets or exceeds the minimum legal drinking age.
+     * 
+     * The request must meet the following criteria in order to be evaluated:
+     * * *firstName*, *lastName*, and *address* are required fields.
+     * * One of the following sets of attributes are required for the *address*:
+     *   * *line1, city, region*
+     *   * *line1, postalCode*
+     * 
+     * Optionally, the transaction and its lines may use the following parameters:
+     * * A *DOB* (Date of Birth) field. The value should be ISO-8601 compliant (e.g. 2020-07-21).
+     * * Beyond the required *address* fields above, a *country* field is permitted
+     *   * The valid values for this attribute are [*US, USA*]
+     * 
+     * **Security Policies**
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param simulatedFailureCode (Optional) The failure code included in the simulated response of the endpoint. Note that this endpoint is only available in Sandbox for testing purposes.
+     * @param model Information about the individual whose age is being verified.
+     * @return AgeVerifyResult
+     */
+    public Future<AgeVerifyResult> verifyAgeAsync(String simulatedFailureCode, AgeVerifyRequest model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/ageverification/verify");
+        path.addQuery("simulatedFailureCode", simulatedFailureCode);
+        return this.threadPool.submit((RestCall<AgeVerifyResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<AgeVerifyResult>(){},""));
+    }
+
+    /**
+     * Evaluates a transaction against a set of direct-to-consumer shipping regulations.
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param companyCode The company code of the company that recorded the transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
+     * @return ShippingVerifyResult
+     */
+    public ShippingVerifyResult decrecatedVerifyShipment(String companyCode, String transactionCode, String documentType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shippingverify");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return ((RestCall<ShippingVerifyResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ShippingVerifyResult>(){},"")).call();
+    }
+
+    /**
+     * Evaluates a transaction against a set of direct-to-consumer shipping regulations.
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param companyCode The company code of the company that recorded the transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
+     * @return ShippingVerifyResult
+     */
+    public Future<ShippingVerifyResult> decrecatedVerifyShipmentAsync(String companyCode, String transactionCode, String documentType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shippingverify");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return this.threadPool.submit((RestCall<ShippingVerifyResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ShippingVerifyResult>(){},""));
+    }
+
+    /**
+     * Removes the transaction from consideration when evaluating regulations that span multiple transactions.
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param companyCode The company code of the company that recorded the transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
+     * @return String
+     */
+    public String deregisterShipment(String companyCode, String transactionCode, String documentType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/registration");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return ((RestCall<String>)restCallFactory.createRestCall("delete", path, null, new TypeToken<String>(){},"")).call();
+    }
+
+    /**
+     * Removes the transaction from consideration when evaluating regulations that span multiple transactions.
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param companyCode The company code of the company that recorded the transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
+     * @return String
+     */
+    public Future<String> deregisterShipmentAsync(String companyCode, String transactionCode, String documentType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/registration");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("delete", path, null, new TypeToken<String>(){},""));
+    }
+
+    /**
+     * Registers the transaction so that it may be included when evaluating regulations that span multiple transactions.
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param companyCode The company code of the company that recorded the transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
+     * @return String
+     */
+    public String registerShipment(String companyCode, String transactionCode, String documentType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/registration");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return ((RestCall<String>)restCallFactory.createRestCall("put", path, null, new TypeToken<String>(){},"")).call();
+    }
+
+    /**
+     * Registers the transaction so that it may be included when evaluating regulations that span multiple transactions.
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param companyCode The company code of the company that recorded the transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
+     * @return String
+     */
+    public Future<String> registerShipmentAsync(String companyCode, String transactionCode, String documentType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/registration");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("put", path, null, new TypeToken<String>(){},""));
+    }
+
+    /**
+     * Evaluates a transaction against a set of direct-to-consumer shipping regulations and, if compliant, registers the transaction so that it may be included when evaluating regulations that span multiple transactions.
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param companyCode The company code of the company that recorded the transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
+     * @return ShippingVerifyResult
+     */
+    public ShippingVerifyResult registerShipmentIfCompliant(String companyCode, String transactionCode, String documentType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/registerIfCompliant");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return ((RestCall<ShippingVerifyResult>)restCallFactory.createRestCall("put", path, null, new TypeToken<ShippingVerifyResult>(){},"")).call();
+    }
+
+    /**
+     * Evaluates a transaction against a set of direct-to-consumer shipping regulations and, if compliant, registers the transaction so that it may be included when evaluating regulations that span multiple transactions.
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param companyCode The company code of the company that recorded the transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
+     * @return ShippingVerifyResult
+     */
+    public Future<ShippingVerifyResult> registerShipmentIfCompliantAsync(String companyCode, String transactionCode, String documentType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/registerIfCompliant");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return this.threadPool.submit((RestCall<ShippingVerifyResult>)restCallFactory.createRestCall("put", path, null, new TypeToken<ShippingVerifyResult>(){},""));
+    }
+
+    /**
+     * Evaluates a transaction against a set of direct-to-consumer shipping regulations.
+     * 
+     * The transaction and its lines must meet the following criteria in order to be evaluated:
+     * * The transaction must be recorded. Using a type of *SalesInvoice* is recommended.
+     * * A parameter with the name *AlcoholRouteType* must be specified and the value must be one of the following: '*DTC*', '*Retailer DTC*'
+     * * A parameter with the name *RecipientName* must be specified and the value must be the name of the recipient.
+     * * Each alcohol line must include a *ContainerSize* parameter that describes the volume of a single container. Use the *unit* field to specify one of the following units: '*Litre*', '*Millilitre*', '*gallon (US fluid)*', '*quart (US fluid)*', '*ounce (fluid US customary)*'
+     * * Each alcohol line must include a *PackSize* parameter that describes the number of containers in a pack. Specify *Count* in the *unit* field.
+     * 
+     * Optionally, the transaction and its lines may use the following parameters:
+     * * The *ShipDate* parameter may be used if the date of shipment is different than the date of the transaction. The value should be ISO-8601 compliant (e.g. 2020-07-21).
+     * * The *RecipientDOB* parameter may be used to evaluate age restrictions. The value should be ISO-8601 compliant (e.g. 2020-07-21).
+     * * The *PurchaserDOB* parameter may be used to evaluate age restrictions. The value should be ISO-8601 compliant (e.g. 2020-07-21).
+     * * The *SalesLocation* parameter may be used to describe whether the sale was made *OnSite* or *OffSite*. *OffSite* is the default value.
+     * * The *AlcoholContent* parameter may be used to describe the alcohol percentage by volume of the item. Specify *Percentage* in the *unit* field.
+     * 
+     * **Security Policies**
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param companyCode The company code of the company that recorded the transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
+     * @return ShippingVerifyResult
+     */
+    public ShippingVerifyResult verifyShipment(String companyCode, String transactionCode, String documentType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/verify");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return ((RestCall<ShippingVerifyResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ShippingVerifyResult>(){},"")).call();
+    }
+
+    /**
+     * Evaluates a transaction against a set of direct-to-consumer shipping regulations.
+     * 
+     * The transaction and its lines must meet the following criteria in order to be evaluated:
+     * * The transaction must be recorded. Using a type of *SalesInvoice* is recommended.
+     * * A parameter with the name *AlcoholRouteType* must be specified and the value must be one of the following: '*DTC*', '*Retailer DTC*'
+     * * A parameter with the name *RecipientName* must be specified and the value must be the name of the recipient.
+     * * Each alcohol line must include a *ContainerSize* parameter that describes the volume of a single container. Use the *unit* field to specify one of the following units: '*Litre*', '*Millilitre*', '*gallon (US fluid)*', '*quart (US fluid)*', '*ounce (fluid US customary)*'
+     * * Each alcohol line must include a *PackSize* parameter that describes the number of containers in a pack. Specify *Count* in the *unit* field.
+     * 
+     * Optionally, the transaction and its lines may use the following parameters:
+     * * The *ShipDate* parameter may be used if the date of shipment is different than the date of the transaction. The value should be ISO-8601 compliant (e.g. 2020-07-21).
+     * * The *RecipientDOB* parameter may be used to evaluate age restrictions. The value should be ISO-8601 compliant (e.g. 2020-07-21).
+     * * The *PurchaserDOB* parameter may be used to evaluate age restrictions. The value should be ISO-8601 compliant (e.g. 2020-07-21).
+     * * The *SalesLocation* parameter may be used to describe whether the sale was made *OnSite* or *OffSite*. *OffSite* is the default value.
+     * * The *AlcoholContent* parameter may be used to describe the alcohol percentage by volume of the item. Specify *Percentage* in the *unit* field.
+     * 
+     * **Security Policies**
+     * 
+     * Swagger Name: AvaTaxBeverageClient
+     * @param companyCode The company code of the company that recorded the transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
+     * @return ShippingVerifyResult
+     */
+    public Future<ShippingVerifyResult> verifyShipmentAsync(String companyCode, String transactionCode, String documentType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/verify");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return this.threadPool.submit((RestCall<ShippingVerifyResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ShippingVerifyResult>(){},""));
     }
 
 //endregion
