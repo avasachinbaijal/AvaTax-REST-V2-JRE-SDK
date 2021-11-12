@@ -21245,37 +21245,20 @@ public class AvaTaxClient {
     }
 
     /**
-     * Evaluates a transaction against a set of direct-to-consumer shipping regulations.
+     * Removes the transaction from consideration when evaluating regulations that span multiple transactions.
      * 
      * Swagger Name: AvaTaxBeverageClient
      * @param companyCode The company code of the company that recorded the transaction
      * @param transactionCode The transaction code to retrieve
      * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
-     * @return ShippingVerifyResult
+     * @return Void
      */
-    public ShippingVerifyResult decrecatedVerifyShipment(String companyCode, String transactionCode, String documentType) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shippingverify");
+    public Void deregisterShipment(String companyCode, String transactionCode, String documentType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/registration");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
-        return ((RestCall<ShippingVerifyResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ShippingVerifyResult>(){},"")).call();
-    }
-
-    /**
-     * Evaluates a transaction against a set of direct-to-consumer shipping regulations.
-     * 
-     * Swagger Name: AvaTaxBeverageClient
-     * @param companyCode The company code of the company that recorded the transaction
-     * @param transactionCode The transaction code to retrieve
-     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
-     * @return ShippingVerifyResult
-     */
-    public Future<ShippingVerifyResult> decrecatedVerifyShipmentAsync(String companyCode, String transactionCode, String documentType) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shippingverify");
-        path.applyField("companyCode", companyCode);
-        path.applyField("transactionCode", transactionCode);
-        path.addQuery("documentType", documentType);
-        return this.threadPool.submit((RestCall<ShippingVerifyResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ShippingVerifyResult>(){},""));
+        return ((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"")).call();
     }
 
     /**
@@ -21285,31 +21268,14 @@ public class AvaTaxClient {
      * @param companyCode The company code of the company that recorded the transaction
      * @param transactionCode The transaction code to retrieve
      * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
-     * @return String
+     * @return Void
      */
-    public String deregisterShipment(String companyCode, String transactionCode, String documentType) throws Exception {
+    public Future<Void> deregisterShipmentAsync(String companyCode, String transactionCode, String documentType) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/registration");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
-        return ((RestCall<String>)restCallFactory.createRestCall("delete", path, null, new TypeToken<String>(){},"")).call();
-    }
-
-    /**
-     * Removes the transaction from consideration when evaluating regulations that span multiple transactions.
-     * 
-     * Swagger Name: AvaTaxBeverageClient
-     * @param companyCode The company code of the company that recorded the transaction
-     * @param transactionCode The transaction code to retrieve
-     * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
-     * @return String
-     */
-    public Future<String> deregisterShipmentAsync(String companyCode, String transactionCode, String documentType) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/registration");
-        path.applyField("companyCode", companyCode);
-        path.applyField("transactionCode", transactionCode);
-        path.addQuery("documentType", documentType);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("delete", path, null, new TypeToken<String>(){},""));
+        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},""));
     }
 
     /**
@@ -21319,14 +21285,14 @@ public class AvaTaxClient {
      * @param companyCode The company code of the company that recorded the transaction
      * @param transactionCode The transaction code to retrieve
      * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
-     * @return String
+     * @return Void
      */
-    public String registerShipment(String companyCode, String transactionCode, String documentType) throws Exception {
+    public Void registerShipment(String companyCode, String transactionCode, String documentType) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/registration");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
-        return ((RestCall<String>)restCallFactory.createRestCall("put", path, null, new TypeToken<String>(){},"")).call();
+        return ((RestCall<Void>)restCallFactory.createRestCall("put", path, null, new TypeToken<Void>(){},"")).call();
     }
 
     /**
@@ -21336,14 +21302,14 @@ public class AvaTaxClient {
      * @param companyCode The company code of the company that recorded the transaction
      * @param transactionCode The transaction code to retrieve
      * @param documentType (Optional): The document type of the transaction to operate on. If omitted, defaults to "SalesInvoice"
-     * @return String
+     * @return Void
      */
-    public Future<String> registerShipmentAsync(String companyCode, String transactionCode, String documentType) {
+    public Future<Void> registerShipmentAsync(String companyCode, String transactionCode, String documentType) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/shipment/registration");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("put", path, null, new TypeToken<String>(){},""));
+        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("put", path, null, new TypeToken<Void>(){},""));
     }
 
     /**
