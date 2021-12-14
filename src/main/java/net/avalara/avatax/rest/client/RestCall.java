@@ -9,10 +9,8 @@ import net.avalara.avatax.rest.client.models.ErrorResult;
 import net.avalara.avatax.rest.client.serializer.JsonSerializer;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
-import org.apache.http.HttpStatus;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.*;
-import org.apache.http.client.utils.HttpClientUtils;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -155,11 +153,9 @@ public class RestCall<T> implements Callable<T> {
                 json = EntityUtils.toString(entity);
 
             if (response.getStatusLine().getStatusCode() / 100 != 2)
-
             {
                 throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
             }
-
             if (json != null) {
                 if (ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
                     obj = (T) JsonSerializer.DeserializeObject(json, typeToken.getType());
